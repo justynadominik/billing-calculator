@@ -1,0 +1,17 @@
+.vs/
+[b|B]in
+[o|O]bj
+packages
+Artifacts/
+buildtools/*
+!buildtools/packages.config
+FunctionalTestSettings
+FunctionalTest.runsettings
+*.dll
+*.jar
+*.exe
+*.bin
+!vendor/*
+Source/BillingCalculator.sln.DotSettings.user
+Source/BillingCalculator.CustomPage/cypress/screenshots
+.vscode/settings.json

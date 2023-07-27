@@ -1,0 +1,17 @@
+<BuildTools>
+  <RAPBuilder>
+    <Applications>
+      <Application name="BillingCalculator" generatenuspec="true">
+        <Destination>Artifacts\BillingCalculator.rap</Destination>
+        <ApplicationSchema>ApplicationsXML/application.xml</ApplicationSchema>
+        <TestDirectory />
+        <Assemblies>
+        </Assemblies>
+        <ResourceFiles />
+        <CustomPages>
+          <CustomPage guid="3eb10df5-622f-4934-929b-1410081a5675">Source\BillingCalculator.CustomPage\dist</CustomPage>
+        </CustomPages>
+      </Application>
+    </Applications>
+  </RAPBuilder>
+</BuildTools>

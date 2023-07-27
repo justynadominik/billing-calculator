@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ArtifactViewFields />
+  <Assemblies />
+  <ResourceFiles />
+  <ExternalTabs />
+  <ExtractionDate>2023-04-18T14:32:11.0918078Z</ExtractionDate>
+  <Guid>043114cb-e885-47da-8836-a0693c8a73ac</Guid>
+  <Name>BillingCalculator</Name>
+  <Objects />
+  <ParentTabs />
+  <RelativityVersion>55.0.8.0</RelativityVersion>
+  <Version>1.0.0.1</Version>
+  <SchemaVersion>0.0.0.3</SchemaVersion>
+  <TabDisplay>false</TabDisplay>
+  <OriginSignature>e55004aa-0b25-4a7b-b019-e508075b9a4d</OriginSignature>
+  <MasterScripts />
+  <ApplicationScripts />
+  <CustomPages>
+    <CustomPage>
+      <ArtifactID>1019333</ArtifactID>
+      <Guid>3eb10df5-622f-4934-929b-1410081a5675</Guid>
+      <ReadinessUrl>index.html</ReadinessUrl>
+      <Name>BillingCalculator</Name>
+      <FileName>dist.zip</FileName>
+      <Size>1338989</Size>
+      <Hash>C1-72-F1-BC-A4-AD-10-08-B2-E4-4A-34-4A-82-AA-8C-11-FF-F9-29</Hash>
+    </CustomPage>
+  </CustomPages>
+  <AgentTypes />
+  <IsRelativityApplication>true</IsRelativityApplication>
+  <InstallEventHandlers />
+  <SavedSearches />
+  <SearchContainers />
+  <SearchProviders />
+  <EnvironmentVariables>
+    <SearchAsConditionCriteriaID>1000471</SearchAsConditionCriteriaID>
+    <FullTextAll>1000182</FullTextAll>
+  </EnvironmentVariables>
+  <GlobalApplication>true</GlobalApplication>
+  <ToggleMappings />
+  <RelativityScriptIds />
+  <ViewIds />
+  <DashboardIds />
+  <LayoutIds />
+  <FieldIds />
+  <ChoiceIds />
+  <ObjectTypeIds />
+  <TabIds />
+  <Locked>false</Locked>
+</Application>

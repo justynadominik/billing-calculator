@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Castle>3.3.0</Castle>
+  </PropertyGroup>
+  <ItemGroup Label="Microsoft Nugets">
+    <PackageReference Update="Castle.Core" Version="$(Castle)" PrivateAssets="All"/>
+    <PackageReference Update="Castle.Windsor" Version="$(Castle)" PrivateAssets="all"/>
+    <PackageReference Update="ConfigureAwaitChecker.Analyzer" Version="4.0.0" />
+    <PackageReference Update="CSharpGuidelineAnalyzer" Version="3.1.0" PrivateAssets="all"/>
+    <PackageReference Update="FluentAssertions" Version="6.10.0" PrivateAssets="All"/>
+    <PackageReference Update="IdentityModel" Version="1.6.0" />
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageReference Update="Polly" Version="5.9.0" />
+    <PackageReference Update="Relativity.API" Version="18.1.3" />
+    <PackageReference Update="Relativity.Identity.SDK" Version="2.5.0" />
+    <PackageReference Update="Relativity.Kepler" Version="2.7.0" />
+    <PackageReference Update="Relativity.RAPBuilder" Version="1.4.1" />
+    <PackageReference Update="Relativity.Services.Interfaces" Version="13.8.1" />
+    <PackageReference Update="Relativity.Services.Interfaces.Private" Version="13.1.0" />
+    <PackageReference Update="Relativity.Shared.SDK" Version="1.7.0" />
+  </ItemGroup>
+</Project>
