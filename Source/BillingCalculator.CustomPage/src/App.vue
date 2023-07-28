@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { Modal } from "./components";
+import { Category } from "./components";
 import { onMounted } from "vue";
 import { helloWorld, useS2 } from "./composables";
+
 const hello = useS2(helloWorld);
+
 
 onMounted(() => {
   hello.execute();
@@ -14,7 +16,8 @@ function handleRetry() {
 </script>
 
 <template>
-  <Modal>
+  <Category></Category>
+  <!-- <Modal>
     <div>Response: {{ hello.data.value?.message }}</div>
     <div>Loading: {{ hello.loading.value }}</div>
 
@@ -27,7 +30,11 @@ function handleRetry() {
       <button class="rwa-button">Delete</button>
       <button class="rwa-button secondary">Cancel</button>
     </template>
-  </Modal>
+  </Modal> -->
 </template>
 
-<style scoped></style>
+<style scoped>
+body{
+  background-color: #f3f8fb;;
+}
+</style>

@@ -23,7 +23,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(108, 117, 132, 0.5);
 }
 
 .actions {
