@@ -1,14 +1,22 @@
+import { CalculationResult } from "./CalculationResult";
+import { RateConfiguration } from "./RateConfiguration";
+
 export class RepositoryCalculator {
-  rate: number;
+  reviewPeek: number;
+  rateConfig : RateConfiguration;
 
   calculate(repoData: RepositoryCalculationInput) : CalculationResult {
-    //let dataInGb = repoData.linkedBilliableFileSizeInGB + (repoData.totalBilliableFileSizeInGB + repoData.textOnlyDocumentsCount/4000 - repoData.linkedBilliableFileSizeInGB)
+
     let dataInGb = repoData.totalBilliableFileSizeInGB  + repoData.textOnlyDocumentsCount/4000 - repoData.linkedBilliableFileSizeInGB
-    return new CalculationResult(dataInGb, dataInGb * this.rate )
+
+    const rate = this.rateConfig.getTier(this.reviewPeek)?.rate!;
+
+    return new CalculationResult(dataInGb, dataInGb * rate)
   }
 
-  constructor(rate : number){
-    this.rate = rate;
+  constructor(reviewPeek : number, rateConfig : RateConfiguration){
+    this.reviewPeek = reviewPeek;
+    this.rateConfig = rateConfig;
   }
 }
 
@@ -24,13 +32,4 @@ export class RepositoryCalculationInput {
   }
 }
 
-export class CalculationResult {
-  dataInGB : number;
-  amount: number;
-
-  constructor(dataInGB: number, amount: number){
-    this.dataInGB = dataInGB;
-    this.amount = amount;
-  }
-}
 
