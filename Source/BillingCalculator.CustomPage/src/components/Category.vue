@@ -12,6 +12,11 @@
             <span class="span1"></span>
         </span>
       </rwc-category>
+      <rwc-category category-title="Chart" >
+        <span>
+            Tu bedzie chart
+        </span>
+      </rwc-category>
       <rwc-category category-title="Review" collapsible>
         <span>
             <span class = "span1"></span>
@@ -36,10 +41,13 @@
       </rwc-category>
       <rwc-category category-title="Cold Storage" collapsible>
         <span>
+            <span class = "span1"></span>
+            <rwc-text-input-field label="Billable File Size" value="" edit-mode ></rwc-text-input-field>
         </span>
       </rwc-category>
       <rwc-category category-title="Translate" collapsible>
         <span>
+            ???????
         </span>
       </rwc-category>
 </template>

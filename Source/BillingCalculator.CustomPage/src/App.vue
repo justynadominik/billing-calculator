@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { Category } from "./components";
+import { Category, Footer } from "./components";
 import { onMounted } from "vue";
 import { helloWorld, useS2 } from "./composables";
-
 const hello = useS2(helloWorld);
-
 
 onMounted(() => {
   hello.execute();
@@ -17,6 +15,7 @@ function handleRetry() {
 
 <template>
   <Category></Category>
+  <Footer></Footer>
   <!-- <Modal>
     <div>Response: {{ hello.data.value?.message }}</div>
     <div>Loading: {{ hello.loading.value }}</div>
