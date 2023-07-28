@@ -1,4 +1,4 @@
-import { RepositoryCalculator, RepositoryCalculationInput } from './BillingCalculator';
+import RepositoryCalculator, { RepositoryCalculationInput } from './RepositoryCalculator';
 import { RateConfiguration } from "./RateConfiguration";
 import { Tier } from "./Tier";
 import { CalculationResult } from "./CalculationResult";
@@ -7,9 +7,9 @@ describe('RepositoryCalculator tests', () => {
   test('Should calculate proper value for repository', () => {
     let config = getSampleTiers();
   
-    let s = new RepositoryCalculator(10, config);
+    let s = new RepositoryCalculator(config);
 
-    let result = s.calculate(new RepositoryCalculationInput(10, 1, 0));
+    let result = s.calculate(new RepositoryCalculationInput(10, 1, 0, 10));
     
     expect(result).toEqual(new CalculationResult(9,4.5))
   })
@@ -17,9 +17,9 @@ describe('RepositoryCalculator tests', () => {
   test('Should calculate proper value for repository', () => {
     let config = getSampleTiers();
   
-    let s = new RepositoryCalculator(40, config);
+    let s = new RepositoryCalculator(config);
 
-    let result = s.calculate(new RepositoryCalculationInput(10, 1, 0));
+    let result = s.calculate(new RepositoryCalculationInput(10, 1, 0, 40));
     
     expect(result).toEqual(new CalculationResult(9,0.9))
   })
@@ -28,8 +28,8 @@ describe('RepositoryCalculator tests', () => {
   test('Should calculate proper value for repository with documents', () => {
     let config = getSampleTiers();
 
-    let s = new RepositoryCalculator(10, config);
-    let result = s.calculate(new RepositoryCalculationInput(10, 1, 4000));
+    let s = new RepositoryCalculator(config);
+    let result = s.calculate(new RepositoryCalculationInput(10, 1, 4000, 10));
     
     expect(result).toEqual(new CalculationResult(10,5))
   })  

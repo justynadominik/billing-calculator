@@ -1,6 +1,5 @@
 import { Tier } from "./Tier";
 
-
 export class RateConfiguration {
   tiers!: Tier[];
 
