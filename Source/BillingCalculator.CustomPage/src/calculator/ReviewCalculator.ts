@@ -10,7 +10,15 @@ export class ReviewCalculator implements Calculator<ReviewCalculationInput> {
 
     let dataInGb = input.dataInGb  + input.textOnlyDocumentsCount/4000;
 
-    const rate = this.rateConfig.getTier(input.reviewPeek)?.rate!;
+    let peek = null;
+    if(input.reviewPeek == null){
+     peek = dataInGb;
+    }
+    else{
+      peek = Math.max(input.reviewPeek, dataInGb);
+    }
+    
+    const rate = this.rateConfig.getTier(peek)?.rate!;
 
     return new CalculationResult(dataInGb, dataInGb * rate)
   }
@@ -21,7 +29,7 @@ export class ReviewCalculator implements Calculator<ReviewCalculationInput> {
 }
 
 export class ReviewCalculationInput {
-  reviewPeek: number;
+  reviewPeek: number | null;
   dataInGb: number;
   textOnlyDocumentsCount: number;
 
