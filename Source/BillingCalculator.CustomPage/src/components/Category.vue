@@ -14,7 +14,7 @@
       </rwc-category>
       <rwc-category category-title="Chart" >
         <span>
-            Tu bedzie chart
+          <Line :data="data" :options="options" />
         </span>
       </rwc-category>
       <rwc-category category-title="Review" collapsible>
@@ -51,6 +51,42 @@
         </span>
       </rwc-category>
 </template>
+
+<script lang="ts">
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js'
+import { Line } from 'vue-chartjs'
+import * as chartConfig from './ChartConfig.js'
+
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+)
+
+export default {
+  name: 'App',
+  components: {
+    Line
+  },
+  data() {
+    return chartConfig
+  }
+}
+</script>
 
 <style scoped>
 .span1{
