@@ -79,7 +79,7 @@ export class CalculationService {
 
     var peek = this.getReviewPeekData(result);
 
-    var input = data[peek[1]][0];
+    var input = data.find((item) => item[1] == peek[1])![0];
     let finalCalculation = this.calculate(input);
     finalCalculation.peekDay = peek[1];
 
