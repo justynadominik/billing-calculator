@@ -15,3 +15,4 @@ FunctionalTest.runsettings
 Source/BillingCalculator.sln.DotSettings.user
 Source/BillingCalculator.CustomPage/cypress/screenshots
 .vscode/settings.json
+.idea
