@@ -11,6 +11,9 @@
     </rwc-category>
 </template>
 
+<script setup lang="ts">
+</script>
+
 <style lang="scss">
 .span1{
     background: inherit;

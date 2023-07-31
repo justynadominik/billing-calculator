@@ -1,3 +1,29 @@
+<template>
+  <rwc-category category-title="The Billing Calculator" >
+      <span class="rwa-button-group left-aligned">
+          <span class = "span1"></span>
+          <button class="rwa-button" @click="toggleComponent('review')">Review</button>
+          <!-- <button class="rwa-button" click.delegate="addCategory(review)">Review</button> -->
+          <span class="span1"></span>
+          <!-- <button class="rwa-button" click.delegate="addCategory(repository)">Repository</button>
+          <span class="span1"></span>
+          <button class="rwa-button" click.delegate="addCategory(cold storage)">Cold Storage</button>
+          <span class="span1"></span>
+          <button class="rwa-button" click.delegate="addCategory(translate)">Translate</button>
+          <span class="span1"></span> -->
+      </span>
+  </rwc-category>
+  <rwc-category category-title="Chart" >
+      <span>
+        <Line :data="chartData" :options="chartOptions" />
+      </span>
+  </rwc-category>
+  <div v-if="showReviewComponent">
+    <ReviewTab></ReviewTab>
+  </div>
+  <Footer></Footer>
+</template>
+
 <script setup lang="ts">
 import {
   Chart as ChartJS,
@@ -13,7 +39,7 @@ import { Line } from 'vue-chartjs'
 import * as chartConfig from './ChartConfig.js'
 import { ref } from 'vue'
 import { Footer }  from './Footer'
-
+import { ReviewTab }  from './Review'
 
 ChartJS.register(
   CategoryScale,
@@ -24,6 +50,14 @@ ChartJS.register(
   Tooltip,
   Legend
 )
+
+const showReviewComponent = ref(false);
+
+const toggleComponent = (component: string) => {
+  if(component === 'review'){
+    showReviewComponent.value = !showReviewComponent.value;
+  }
+}
 
 const chartData = ref({
     labels: [ 'January', 'February', 'March'],
@@ -40,31 +74,6 @@ const chartData = ref({
     maintainAspectRatio: false
   })
 </script>
-
-<template>
-    <rwc-category category-title="The Billing Calculator" >
-        <span class="rwa-button-group left-aligned">
-            <span class = "span1"></span>
-            <button class="rwa-button" click.delegate="addCategory(review)">Review</button>
-            <span class="span1"></span>
-            <button class="rwa-button" click.delegate="addCategory(repository)">Repository</button>
-            <span class="span1"></span>
-            <button class="rwa-button" click.delegate="addCategory(cold storage)">Cold Storage</button>
-            <span class="span1"></span>
-            <button class="rwa-button" click.delegate="addCategory(translate)">Translate</button>
-            <span class="span1"></span>
-        </span>
-    </rwc-category>
-    <rwc-category category-title="Chart" >
-        <span>
-          <Line :data="chartData" :options="chartOptions" />
-        </span>
-    </rwc-category>
-    <router-view/>
-    <Footer></Footer>
-</template>
-
-
 
 <style lang="scss">
 .span1{
