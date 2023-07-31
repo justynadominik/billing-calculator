@@ -9,6 +9,7 @@
     "build": "vue-tsc && vite build"
   },
   "dependencies": {
+    "@amcharts/amcharts4": "^4.10.36",
     "@amcharts/amcharts5": "^5.4.1",
     "@amcharts/amcharts5-fonts": "^5.0.1",
     "@amcharts/amcharts5-geodata": "^5.1.1",
@@ -16,7 +17,8 @@
     "pinia": "^2.1.6",
     "relativity-web-components": "^16.8.10",
     "relativity-web-utilities": "^5.0.7",
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",

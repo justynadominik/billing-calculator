@@ -65,55 +65,62 @@
 import { storeToRefs } from "pinia";
 import { ref } from 'vue'
 import { useCounterStore } from "../stores/counter";
-import * as am5 from "@amcharts/amcharts5";
-import * as am5xy from "@amcharts/amcharts5/xy";
+// import * as am5 from "@amcharts/amcharts5";
+// import * as am5xy from "@amcharts/amcharts5/xy";
+import * as am4core from "@amcharts/amcharts4/core";
+import * as am4charts from "@amcharts/amcharts4/charts";
 
 const { count, name, doubleCount } = storeToRefs(useCounterStore());
 const { increment, decrement, changeName } = useCounterStore();
 
-export default {
-  name: 'HelloWorld',
-  mounted() {
-    am5.ready(function () {
-      const root = am5.Root.new(this.$refs.chartdiv);
-      let chart = root.container.children.push(
-        am5xy.XYChart.new(root, {})
-      );
+let chart = am4core.create(
+  "chartdiv",
+  am4charts.PieChart
+);
 
-      let yAxis = chart.yAxes.push(
-        am5xy.ValueAxis.new(root, {
-          renderer: am5xy.AxisRendererY.new(root, {})
-        })
-      );
+// export default {
+//   name: 'HelloWorld',
+//   mounted() {
+//     am5.ready(function () {
+//       const root = am5.Root.new(this.$refs.chartdiv);
+//       let chart = root.container.children.push(
+//         am5xy.XYChart.new(root, {})
+//       );
 
-      let xAxis = chart.xAxes.push(
-        am5xy.DateAxis.new(root, {
-          renderer: am5xy.AxisRendererX.new(root, {}),
-          baseInterval: {
-            timeUnit: "day",
-            count: 1
-          }
-        })
-      );
+//       let yAxis = chart.yAxes.push(
+//         am5xy.ValueAxis.new(root, {
+//           renderer: am5xy.AxisRendererY.new(root, {})
+//         })
+//       );
 
-      let series = chart.series.push(
-        am5xy.ColumnSeries.new(root, {
-          name: "Series",
-          xAxis: xAxis,
-          yAxis: yAxis,
-          valueYField: "value",
-          valueXField: "date"
-        })
-      );
-    })
-  },
+//       let xAxis = chart.xAxes.push(
+//         am5xy.DateAxis.new(root, {
+//           renderer: am5xy.AxisRendererX.new(root, {}),
+//           baseInterval: {
+//             timeUnit: "day",
+//             count: 1
+//           }
+//         })
+//       );
 
-  beforeDestroy() {
-    if (this.root) {
-      this.root.dispose();
-    }
-  }
-}
+//       let series = chart.series.push(
+//         am5xy.ColumnSeries.new(root, {
+//           name: "Series",
+//           xAxis: xAxis,
+//           yAxis: yAxis,
+//           valueYField: "value",
+//           valueXField: "date"
+//         })
+//       );
+//     })
+//   },
+
+//   beforeDestroy() {
+//     if (this.root) {
+//       this.root.dispose();
+//     }
+//   }
+// }
 </script>
 
 <style scoped>
