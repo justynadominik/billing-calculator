@@ -13,9 +13,8 @@
       </span>
   </rwc-category>
   <rwc-category category-title="Chart" >
-        <!-- <Line :data="chartData" :options="chartOptions" /> -->
+      <div id="chartdiv"></div>
   </rwc-category>
-  <div id="chartdiv"></div>
   <div v-if="showRepoComponent">
     <RepositoryComponent></RepositoryComponent>
   </div>
@@ -32,18 +31,6 @@
 </template>
 
 <script setup lang="ts">
-// import {
-//   Chart as ChartJS,
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   LineElement,
-//   Title,
-//   Tooltip,
-//   Legend
-// } from 'chart.js'
-// import { Line } from 'vue-chartjs'
-// import * as chartConfig from './ChartConfig.js'
 import { ref } from 'vue'
 import { FooterComponent } from './Footer'
 import { ReviewComponent } from './Review'
@@ -52,10 +39,17 @@ import { ColdStorageComponent } from './ColdStorage'
 import { TranslateComponent } from './Translate'
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
+import { onMounted } from "vue";
+import { onActivated } from "vue";
 
-let chart = am4core.create(
+onMounted(() => {
+  createChart();
+});
+
+function createChart(){
+  let chart = am4core.create(
   "chartdiv",
-  am4charts.PieChart
+  am4charts.XYChart
 );
 
 chart.data = [{
@@ -86,15 +80,7 @@ chart.data = [{
   "country": "The Netherlands",
   "litres": 50
 }];
-// ChartJS.register(
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   LineElement,
-//   Title,
-//   Tooltip,
-//   Legend
-// )
+}
 
 const showReviewComponent = ref(false);
 const showRepoComponent = ref(false);
@@ -115,21 +101,6 @@ const toggleComponent = (component: string) => {
     showTranslateComponent.value = !showTranslateComponent.value;
   }
 }
-
-// const chartData = ref({
-//     labels: [ 'January', 'February', 'March'],
-//     datasets: [
-//       {
-//         label: 'Data One',
-//         backgroundColor: '#f87979',
-//         data: [40, 20, 12]
-//       }
-//     ]
-//   })
-//   const chartOptions = ref({
-//     responsive: true,
-//     maintainAspectRatio: false
-//   })
 </script>
 
 <style lang="scss">
