@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "keplerjs": "^4.0.15",
+    "pinia": "^2.1.6",
     "relativity-web-components": "^16.8.10",
     "relativity-web-utilities": "^5.0.7",
     "vue": "^3.2.45",

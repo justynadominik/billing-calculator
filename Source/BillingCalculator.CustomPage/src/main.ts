@@ -1,6 +1,7 @@
 import { config } from "relativity-web-components";
 import { createApp } from "vue";
 import App from "./App.vue";
+import { createPinia } from "pinia";
 import "./global.css";
 import {
   KeplerProvider,
@@ -22,6 +23,7 @@ const start = async () => {
         "https://services.ctus.dev.k8s.r1.kcura.com/TBD-billing-service"
       )
     )
+    .use(createPinia())
     .mount("#app");
 };
 

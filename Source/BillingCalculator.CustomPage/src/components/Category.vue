@@ -14,8 +14,16 @@
       </rwc-category>
       <rwc-category category-title="Chart" >
         <span>
-          <Line :data="data" :options="options" />
+          <Line :data="chartData" :options="chartOptions" />
         </span>
+        <br>
+        <p>Hey there, my name is {{ name }}</p>
+        <p>Count x 2: {{ doubleCount }}</p>
+        <p>Count: {{ count }}</p>
+        <br>
+        <button class="increase" @click="increment()">Increase +</button>
+        <button class="decrease" @click="decrement()">Decrease -</button>
+        <button @click="changeName()">Change Name</button>
       </rwc-category>
       <rwc-category category-title="Review" collapsible>
         <span>
@@ -25,7 +33,7 @@
             <rwc-text-input-field label="Text Only Documents" value="" edit-mode ></rwc-text-input-field>
         </span>
         <div class="static-text">
-            <rwc-static-text><b>Billable File Size</b></rwc-static-text>
+            <b>Billable File Size</b>
         </div>
             <rwc-slider max="27" step="3" length="300px" orientation="horizontal" style="padding-top:50px; padding-bottom: 50px;"></rwc-slider>
       </rwc-category>
@@ -52,7 +60,7 @@
       </rwc-category>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -65,6 +73,9 @@ import {
 } from 'chart.js'
 import { Line } from 'vue-chartjs'
 import * as chartConfig from './ChartConfig.js'
+import { ref } from 'vue'
+import { storeToRefs } from "pinia";
+import { useCounterStore } from "../stores/counter";
 
 
 ChartJS.register(
@@ -77,15 +88,24 @@ ChartJS.register(
   Legend
 )
 
-export default {
-  name: 'App',
-  components: {
-    Line
-  },
-  data() {
-    return chartConfig
-  }
-}
+const { count, name, doubleCount } = storeToRefs(useCounterStore());
+const { increment, decrement, changeName } = useCounterStore();
+
+const chartData = ref({
+    labels: [ 'January', 'February', 'March'],
+    datasets: [
+      {
+        label: 'Data One',
+        backgroundColor: '#f87979',
+        data: [40, 20, 12]
+      }
+    ]
+  })
+  const chartOptions = ref({
+    responsive: true,
+    maintainAspectRatio: false
+  })
+
 </script>
 
 <style scoped>
@@ -106,6 +126,7 @@ export default {
     font-family: "Roboto", arial, helvetica, sans-serif;
 	font-weight: 700;
 	float: left;
+  font-size: 14px;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 3rem;
