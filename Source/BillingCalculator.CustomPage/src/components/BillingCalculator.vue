@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,7 +11,8 @@ import {
 } from 'chart.js'
 import { Line } from 'vue-chartjs'
 import * as chartConfig from './ChartConfig.js'
-import  { component1 }  from './Footer'
+import { ref } from 'vue'
+import { Footer }  from './Footer'
 
 
 ChartJS.register(
@@ -24,15 +25,20 @@ ChartJS.register(
   Legend
 )
 
-export default {
-  name: 'App',
-  components: {
-    Line
-  },
-  data() {
-    return chartConfig
-  }
-}
+const chartData = ref({
+    labels: [ 'January', 'February', 'March'],
+    datasets: [
+      {
+        label: 'Data One',
+        backgroundColor: '#f87979',
+        data: [40, 20, 12]
+      }
+    ]
+  })
+  const chartOptions = ref({
+    responsive: true,
+    maintainAspectRatio: false
+  })
 </script>
 
 <template>
@@ -51,11 +57,11 @@ export default {
     </rwc-category>
     <rwc-category category-title="Chart" >
         <span>
-          <Line :data="data" :options="options" />
+          <Line :data="chartData" :options="chartOptions" />
         </span>
     </rwc-category>
     <router-view/>
-    <component1></component1>
+    <Footer></Footer>
 </template>
 
 

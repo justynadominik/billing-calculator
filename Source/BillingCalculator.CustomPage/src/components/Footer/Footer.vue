@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
     <div class = "cost">
         <rwc-text-input-field label="Estimaded cost $" value="0" disabled ></rwc-text-input-field>
