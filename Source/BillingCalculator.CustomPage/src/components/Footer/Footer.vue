@@ -11,7 +11,7 @@
     </div>
 </template>
 
-<style>
+<style lang="scss">
 .cost{
     padding-top:20px
 }
