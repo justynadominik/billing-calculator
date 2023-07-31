@@ -1,3 +1,3 @@
-import ReviewTab from './ReviewTab.vue';
+import ReviewComponent from './ReviewComponent.vue';
 
-export { ReviewTab };
+export { ReviewComponent };

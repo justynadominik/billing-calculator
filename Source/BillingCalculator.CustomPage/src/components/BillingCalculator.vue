@@ -3,16 +3,13 @@
       <span class="rwa-button-group left-aligned">
           <span class = "span1"></span>
           <button class="rwa-button" @click="toggleComponent('review')">Review</button>
-          <!-- <button class="rwa-button" click.delegate="addCategory(review)">Review</button> -->
           <span class="span1"></span>
           <button class="rwa-button" @click="toggleComponent('repository')">Repository</button>
           <span class="span1"></span>
-          <!-- <button class="rwa-button" click.delegate="addCategory(repository)">Repository</button>
+          <button class="rwa-button" @click="toggleComponent('coldStorage')">Cold Storage</button>
           <span class="span1"></span>
-          <button class="rwa-button" click.delegate="addCategory(cold storage)">Cold Storage</button>
+          <button class="rwa-button" @click="toggleComponent('translate')">Translate</button>
           <span class="span1"></span>
-          <button class="rwa-button" click.delegate="addCategory(translate)">Translate</button>
-          <span class="span1"></span> -->
       </span>
   </rwc-category>
   <rwc-category category-title="Chart" >
@@ -21,12 +18,18 @@
       </span>
   </rwc-category>
   <div v-if="showRepoComponent">
-    <RepositoryTab></RepositoryTab>
+    <RepositoryComponent></RepositoryComponent>
   </div>
   <div v-if="showReviewComponent">
-    <ReviewTab></ReviewTab>
+    <ReviewComponent></ReviewComponent>
   </div>
-  <Footer></Footer>
+  <div v-if="showColdStorageComponent">
+    <ColdStorageComponent></ColdStorageComponent>
+  </div>
+  <div v-if="showTranslateComponent">
+    <TranslateComponent></TranslateComponent>
+  </div>
+  <FooterComponent></FooterComponent>
 </template>
 
 <script setup lang="ts">
@@ -43,9 +46,11 @@ import {
 import { Line } from 'vue-chartjs'
 import * as chartConfig from './ChartConfig.js'
 import { ref } from 'vue'
-import { Footer }  from './Footer'
-import { ReviewTab }  from './Review'
-import { RepositoryTab }  from './Repository'
+import { FooterComponent } from './Footer'
+import { ReviewComponent } from './Review'
+import { RepositoryComponent } from './Repository'
+import { ColdStorageComponent } from './ColdStorage'
+import { TranslateComponent } from './Translate'
 
 ChartJS.register(
   CategoryScale,
@@ -59,6 +64,8 @@ ChartJS.register(
 
 const showReviewComponent = ref(false);
 const showRepoComponent = ref(false);
+const showColdStorageComponent = ref(false);
+const showTranslateComponent = ref(false);
 
 const toggleComponent = (component: string) => {
   if(component === 'review'){
@@ -66,6 +73,12 @@ const toggleComponent = (component: string) => {
   }
   if(component === 'repository'){
     showRepoComponent.value = !showRepoComponent.value;
+  }
+  if(component === 'coldStorage'){
+    showColdStorageComponent.value = !showColdStorageComponent.value;
+  }
+  if(component === 'translate'){
+    showTranslateComponent.value = !showTranslateComponent.value;
   }
 }
 

@@ -34,6 +34,7 @@
     font-family: "Roboto", arial, helvetica, sans-serif;
 	font-weight: 700;
 	float: left;
+    font-size: 14px;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 3rem;

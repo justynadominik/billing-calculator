@@ -1,3 +1,3 @@
-import Footer from "./Footer.vue";
+import FooterComponent from "./FooterComponent.vue";
 
-export { Footer };
+export { FooterComponent };

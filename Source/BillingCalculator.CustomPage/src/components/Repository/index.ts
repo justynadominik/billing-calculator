@@ -1,3 +1,3 @@
-import RepositoryTab from './RepositoryTab.vue';
+import RepositoryComponent from './RepositoryComponent.vue';
 
-export { RepositoryTab };
+export { RepositoryComponent };

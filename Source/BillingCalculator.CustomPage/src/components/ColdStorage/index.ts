@@ -1,3 +1,3 @@
-import ColdStorageTab from './ColdStorageTab.vue';
+import ColdStorageComponent from './ColdStorageComponent.vue';
 
-export { ColdStorageTab };
+export { ColdStorageComponent };
