@@ -32,7 +32,7 @@ describe('CalculatorService tests', () => {
             reviewResult: {amount: 1.2, dataInGB: 1},
             repoResult: {amount: 5.4, dataInGB: 9},
             coldStorageResult: {amount: 3, dataInGB: 10},
-            stagingResult: {amount: 3, dataInGB: 10},
+            stagingResult: {amount: 2.7, dataInGB: 10},
             peekDay: 1
         };
     }

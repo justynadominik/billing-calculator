@@ -66,7 +66,7 @@ export class CalculationService {
   }
 
   getDefaultStagingTiers() : RateConfiguration{
-    return new RateConfiguration([new Tier(0, 10, 0.3), new Tier(10, 20, 0.2), new Tier(20, 30, 0.1), new Tier(30, null, 0.05)]);
+    return new RateConfiguration([new Tier(0, 10, 0.3, 1), new Tier(10, 20, 0.2, 2), new Tier(20, 30, 0.1, 3), new Tier(30, null, 0.05, 4)]);
   }
 
   calculateForMonth(data : [calculationInput: BillingDataInput, day: number][]) : BillingCalculationResult {
