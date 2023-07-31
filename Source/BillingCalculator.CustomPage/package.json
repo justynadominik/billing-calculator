@@ -14,7 +14,8 @@
     "relativity-web-components": "^16.8.10",
     "relativity-web-utilities": "^5.0.7",
     "vue": "^3.2.45",
-    "vue-chartjs": "^5.2.0"
+    "vue-chartjs": "^5.2.0",
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
