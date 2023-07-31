@@ -7,7 +7,7 @@ export class StagingCalculator implements Calculator<StagingCalculationInput> {
 
   calculate(input: StagingCalculationInput): CalculationResult {
     const rate = this.rateConfig.getTier(input.reviewPeek)?.rate!;
-    return new CalculationResult(input.dataInGb, input.dataInGb * rate)
+    return new CalculationResult(input.dataInGb, Number((input.dataInGb * rate).toFixed(2)));
   }  
 
   constructor(rateConfig: RateConfiguration){

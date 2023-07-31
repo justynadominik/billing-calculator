@@ -10,8 +10,8 @@ export default class RepositoryCalculator implements Calculator<RepositoryCalcul
     let dataInGb = input.totalBilliableFileSizeInGB  + input.textOnlyDocumentsCount/4000 - input.linkedBilliableFileSizeInGB
 
     const rate = this.rateConfig.getTier(input.reviewPeek)?.rate!;
-
-    return new CalculationResult(dataInGb, dataInGb * rate)
+    
+    return new CalculationResult(dataInGb, Number((dataInGb * rate).toFixed(2)));
   }
 
   constructor(rateConfig : RateConfiguration){

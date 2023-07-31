@@ -21,7 +21,7 @@ export class BillingDataInput{
   stagingData!: StagingCalculationInput;
 }
 
-class BillingCalculationResult{
+export class BillingCalculationResult{
     reviewResult: CalculationResult;
     repoResult: CalculationResult;
     coldStorageResult: CalculationResult;
@@ -37,13 +37,13 @@ class BillingCalculationResult{
     }
 }
 
-class CalculationService {
+export class CalculationService {
   calculate(dataInput : BillingDataInput) : BillingCalculationResult {
     
-    var reviewCalculator = new ReviewCalculator(new RateConfiguration([new Tier(0, null, 1.2)]));    
-    var repoCalculator = new RepositoryCalculator(new RateConfiguration([new Tier(0, null, 0.4)]));
-    var coldStorageCalculator = new ColdStorageCalculator(new RateConfiguration([new Tier(0, null, 0.3)]));
-    var stagingCalculator = new StagingCalculator(new RateConfiguration([new Tier(0, null, 0.3)]));
+    var reviewCalculator = new ReviewCalculator(this.getDefaultReviewTiers());    
+    var repoCalculator = new RepositoryCalculator(this.getDefaultRepoTiers());
+    var coldStorageCalculator = new ColdStorageCalculator(this.getDefaultColdStorageTiers());
+    var stagingCalculator = new StagingCalculator(this.getDefaultStagingTiers());
 
     var reviewResult = reviewCalculator.calculate(dataInput.reviewData);
     var repoResult = repoCalculator.calculate(dataInput.repoData);
@@ -51,6 +51,22 @@ class CalculationService {
     var stagingResult = stagingCalculator.calculate(dataInput.stagingData);
 
     return new BillingCalculationResult(reviewResult, repoResult, coldStorageResult, stagingResult);
+  }
+
+  getDefaultReviewTiers() : RateConfiguration{
+    return new RateConfiguration([new Tier(0, 2, 1.2), new Tier(2, null,  1.0)]);
+  }
+
+  getDefaultRepoTiers() : RateConfiguration{
+    return new RateConfiguration([new Tier(0, 10, 0.6), new Tier(10, 20, 0.5), new Tier(20, 30, 0.3), new Tier(30, 40, 0.2), new Tier(40, null, 0.1)]);
+  }
+
+  getDefaultColdStorageTiers() : RateConfiguration{
+    return new RateConfiguration([new Tier(0, 10, 0.3), new Tier(10, 20, 0.2), new Tier(20, 30, 0.1), new Tier(30, null, 0.05)]);
+  }
+
+  getDefaultStagingTiers() : RateConfiguration{
+    return new RateConfiguration([new Tier(0, 10, 0.3), new Tier(10, 20, 0.2), new Tier(20, 30, 0.1), new Tier(30, null, 0.05)]);
   }
 
   calculateForMonth(data : [calculationInput: BillingDataInput, day: number][]) : BillingCalculationResult {

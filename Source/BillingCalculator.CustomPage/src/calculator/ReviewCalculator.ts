@@ -20,7 +20,7 @@ export class ReviewCalculator implements Calculator<ReviewCalculationInput> {
     
     const rate = this.rateConfig.getTier(peek)?.rate!;
 
-    return new CalculationResult(dataInGb, dataInGb * rate)
+    return new CalculationResult(dataInGb, Number((dataInGb * rate).toFixed(2)));
   }
 
   constructor(rateConfig: RateConfiguration){
