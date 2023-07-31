@@ -53,7 +53,7 @@ class CalculationService {
     return new BillingCalculationResult(reviewResult, repoResult, coldStorageResult, stagingResult);
   }
 
-  calculateForMonth(data : [BillingDataInput,number][]) : BillingCalculationResult {
+  calculateForMonth(data : [calculationInput: BillingDataInput, day: number][]) : BillingCalculationResult {
 
     let result : [BillingCalculationResult,number][] = []
 
@@ -70,7 +70,7 @@ class CalculationService {
     return finalCalculation;
   }
 
-  getReviewPeekData(data : [BillingCalculationResult, number][]) : [BillingCalculationResult, number]{
+  getReviewPeekData(data : [calculationInput : BillingCalculationResult, day: number][]) : [calculationInput : BillingCalculationResult, day: number]{
     let max = 0;
     let item = data[0];
     let index = 0;
