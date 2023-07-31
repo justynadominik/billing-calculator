@@ -5,6 +5,8 @@
           <button class="rwa-button" @click="toggleComponent('review')">Review</button>
           <!-- <button class="rwa-button" click.delegate="addCategory(review)">Review</button> -->
           <span class="span1"></span>
+          <button class="rwa-button" @click="toggleComponent('repository')">Repository</button>
+          <span class="span1"></span>
           <!-- <button class="rwa-button" click.delegate="addCategory(repository)">Repository</button>
           <span class="span1"></span>
           <button class="rwa-button" click.delegate="addCategory(cold storage)">Cold Storage</button>
@@ -18,6 +20,9 @@
         <Line :data="chartData" :options="chartOptions" />
       </span>
   </rwc-category>
+  <div v-if="showRepoComponent">
+    <RepositoryTab></RepositoryTab>
+  </div>
   <div v-if="showReviewComponent">
     <ReviewTab></ReviewTab>
   </div>
@@ -40,6 +45,7 @@ import * as chartConfig from './ChartConfig.js'
 import { ref } from 'vue'
 import { Footer }  from './Footer'
 import { ReviewTab }  from './Review'
+import { RepositoryTab }  from './Repository'
 
 ChartJS.register(
   CategoryScale,
@@ -52,10 +58,14 @@ ChartJS.register(
 )
 
 const showReviewComponent = ref(false);
+const showRepoComponent = ref(false);
 
 const toggleComponent = (component: string) => {
   if(component === 'review'){
     showReviewComponent.value = !showReviewComponent.value;
+  }
+  if(component === 'repository'){
+    showRepoComponent.value = !showRepoComponent.value;
   }
 }
 
