@@ -10,6 +10,8 @@
       <span class="span1"></span>
       <button class="rwa-button" @click="toggleComponent('translate')">Translate</button>
       <span class="span1"></span>
+      <button class="rwa-button" @click="toggleComponent('staging')">Staging</button>
+      <span class="span1"></span>
     </span>
   </rwc-category>
   <rwc-category category-title="Chart">
@@ -27,6 +29,9 @@
   <div v-if="showTranslateComponent">
     <TranslateComponent></TranslateComponent>
   </div>
+  <div v-if="showStagingComponent">
+    <StagingComponent></StagingComponent>
+  </div>
   <FooterComponent></FooterComponent>
 </template>
 
@@ -37,11 +42,11 @@ import { ReviewComponent } from './Review'
 import { RepositoryComponent } from './Repository'
 import { ColdStorageComponent } from './ColdStorage'
 import { TranslateComponent } from './Translate'
+import { StagingComponent } from './Staging'
 import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 
 import { onMounted } from "vue";
-import { onActivated } from "vue";
 import { useCounterStore } from "../stores/counter";
 import { storeToRefs } from "pinia";
 
@@ -95,6 +100,7 @@ const showReviewComponent = ref(false);
 const showRepoComponent = ref(false);
 const showColdStorageComponent = ref(false);
 const showTranslateComponent = ref(false);
+const showStagingComponent = ref(false)
 
 const toggleComponent = (component: string) => {
   if (component === 'review') {
@@ -108,6 +114,9 @@ const toggleComponent = (component: string) => {
   }
   if (component === 'translate') {
     showTranslateComponent.value = !showTranslateComponent.value;
+  }
+  if (component === 'staging') {
+    showStagingComponent.value = !showStagingComponent.value;
   }
 }
 </script>

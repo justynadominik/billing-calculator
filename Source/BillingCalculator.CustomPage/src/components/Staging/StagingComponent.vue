@@ -1,0 +1,20 @@
+<template>
+    <rwc-category category-title="Staging" collapsible>
+        <span>
+            <span class = "span1"></span>
+            <rwc-text-input-field label="Billable File Size" value="" edit-mode ></rwc-text-input-field>
+        </span>
+    </rwc-category>
+</template>
+
+<style lang="scss">
+.span1{
+    background: inherit;
+    width: 3rem;
+    display: inline-block;
+    height: 1.5rem;
+    padding: 0;
+    vertical-align: middle;
+    display: inline-block;
+}
+</style>
