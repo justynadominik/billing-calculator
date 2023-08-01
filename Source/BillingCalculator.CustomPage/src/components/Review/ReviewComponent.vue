@@ -12,11 +12,11 @@
                 <tr>
                   <td>
                     <static-text class="static-text"><b>Billable File Size</b></static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="billableFileSize1" @click="changeBillableFileSize1($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="reviewBillableFileSize1" @click="changeBillableFileSize1($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field label="GB" :value="billableFileSize1" edit-mode
+                    <rwc-number-input-field label="GB" :value="reviewBillableFileSize1" edit-mode
                         style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" >
                     </rwc-number-input-field>
                   </td>
@@ -24,11 +24,11 @@
                 <tr>
                   <td>
                     <static-text class="static-text"><b>Billable File Size</b></static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="billableFileSize2" @click="changeBillableFileSize2($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="reviewBillableFileSize2" @click="changeBillableFileSize2($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field label="GB" :value="billableFileSize2" edit-mode
+                    <rwc-number-input-field label="GB" :value="reviewBillableFileSize2" edit-mode
                         style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" >
                     </rwc-number-input-field>
                   </td>
@@ -36,11 +36,11 @@
                 <tr>
                   <td>
                     <static-text class="static-text"><b>Billable File Size</b></static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="billableFileSize3" @click="changeBillableFileSize3($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="reviewBillableFileSize3" @click="changeBillableFileSize3($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field label="GB" :value="billableFileSize3" edit-mode
+                    <rwc-number-input-field label="GB" :value="reviewBillableFileSize3" edit-mode
                         style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" >
                     </rwc-number-input-field>
                   </td>
@@ -48,11 +48,11 @@
                 <tr>
                   <td>
                     <static-text class="static-text"><b>Billable File Size</b></static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="billableFileSize4" @click="changeBillableFileSize4($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="reviewBillableFileSize4" @click="changeBillableFileSize4($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field label="GB" :value="billableFileSize4" edit-mode
+                    <rwc-number-input-field label="GB" :value="reviewBillableFileSize4" edit-mode
                         style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" >
                     </rwc-number-input-field>
                   </td>
@@ -60,11 +60,11 @@
                 <tr>
                   <td>
                     <static-text class="static-text"><b>Billable File Size</b></static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="billableFileSize5" @click="changeBillableFileSize5($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="reviewBillableFileSize5" @click="changeBillableFileSize5($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field label="GB" :value="billableFileSize5" edit-mode
+                    <rwc-number-input-field label="GB" :value="reviewBillableFileSize5" edit-mode
                         style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" >
                     </rwc-number-input-field>
                   </td>
@@ -82,7 +82,7 @@ import { ref, watch } from "vue";
 import { useReviewStore } from "../../stores/review";
 
 const { changeReviewBillableFileSize, changeReviewTextOnlyDocument } = useBillableData();
-const { billableFileSize1, billableFileSize2, billableFileSize3, billableFileSize4, billableFileSize5 } = storeToRefs(useReviewStore());
+const { reviewBillableFileSize1, reviewBillableFileSize2, reviewBillableFileSize3, reviewBillableFileSize4, reviewBillableFileSize5 } = storeToRefs(useReviewStore());
 const { changeBillableFileSize1, changeBillableFileSize2, changeBillableFileSize3, changeBillableFileSize4, changeBillableFileSize5 } = useReviewStore();
 
 const inputBillableFileSizeReview = ref(0);

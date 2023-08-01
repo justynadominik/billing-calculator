@@ -47,16 +47,34 @@ import { TranslateComponent } from './Translate'
 import { StagingComponent } from './Staging'
 import {ChartConfiguration} from './ChartConfiguration'
 
-import { onMounted } from "vue";
+import { onMounted, watch } from "vue";
 import { onActivated } from "vue";
 import { useBillableData } from "../stores/counter";
 import { storeToRefs } from "pinia";
+import { useRepositoryStore } from "../stores/repository";
+import { useReviewStore } from "../stores/review";
 
 const { data } = storeToRefs(useBillableData());
 
+const { repoBillableFileSize1, repoBillableFileSize2, repoBillableFileSize3, repoBillableFileSize4, repoBillableFileSize5 } = storeToRefs(useRepositoryStore());
+const { reviewBillableFileSize1, reviewBillableFileSize2, reviewBillableFileSize3, reviewBillableFileSize4, reviewBillableFileSize5 } = storeToRefs(useReviewStore());
+
+let chartConfig : ChartConfiguration;
 onMounted(() => {
-  ChartConfiguration.createChart();
+  chartConfig = new ChartConfiguration;
 });
+
+watch(repoBillableFileSize1, ()=> chartConfig.updateRepo(0,repoBillableFileSize1.value));
+watch(repoBillableFileSize2, ()=> chartConfig.updateRepo(1,repoBillableFileSize2.value));
+watch(repoBillableFileSize3, ()=> chartConfig.updateRepo(2,repoBillableFileSize3.value));
+watch(repoBillableFileSize4, ()=> chartConfig.updateRepo(3,repoBillableFileSize4.value));
+watch(repoBillableFileSize5, ()=> chartConfig.updateRepo(4,repoBillableFileSize5.value));
+
+watch(reviewBillableFileSize1, ()=> chartConfig.updateReview(0,reviewBillableFileSize1.value));
+watch(reviewBillableFileSize2, ()=> chartConfig.updateReview(1,reviewBillableFileSize2.value));
+watch(reviewBillableFileSize3, ()=> chartConfig.updateReview(2,reviewBillableFileSize3.value));
+watch(reviewBillableFileSize4, ()=> chartConfig.updateReview(3,reviewBillableFileSize4.value));
+watch(reviewBillableFileSize5, ()=> chartConfig.updateReview(4,reviewBillableFileSize5.value));
 
 
 const showReviewComponent = ref(false);
