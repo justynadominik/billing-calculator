@@ -67,14 +67,14 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { ref } from 'vue'
-import { useCounterStore } from "../stores/counter";
+//import { useCounterStore } from "../stores/counter";
 // import * as am5 from "@amcharts/amcharts5";
 // import * as am5xy from "@amcharts/amcharts5/xy";
 //import * as am4core from "@amcharts/amcharts4/core";
 //import * as am4charts from "@amcharts/amcharts4/charts";
 
-const { count, name, doubleCount } = storeToRefs(useCounterStore());
-const { increment, decrement, changeName } = useCounterStore();
+// const { count, name, doubleCount } = storeToRefs(useCounterStore());
+// const { increment, decrement, changeName } = useCounterStore();
 
 //let chart = am4core.create(
 //  "chartdiv",

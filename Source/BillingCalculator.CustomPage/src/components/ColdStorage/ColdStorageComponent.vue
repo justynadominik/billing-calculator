@@ -2,10 +2,24 @@
     <rwc-category category-title="Cold Storage" collapsible>
         <span>
             <span class = "span1"></span>
-            <rwc-text-input-field label="Billable File Size" value="" edit-mode ></rwc-text-input-field>
+            <input label="Billable File Size" edit-mode v-model="inputBillableFileSizeColdStorage">
         </span>
     </rwc-category>
 </template>
+
+<script setup lang="ts">
+import { useBillableData } from "../../stores/counter";
+import { ref, watch } from "vue";
+
+const { changeColdStorageBillableFileSize } = useBillableData();
+
+const inputBillableFileSizeColdStorage = ref(0);
+
+watch(inputBillableFileSizeColdStorage, (newValue: number) => {
+    changeColdStorageBillableFileSize(newValue);
+}, { immediate: true })
+
+</script>
 
 <style lang="scss">
 .span1{

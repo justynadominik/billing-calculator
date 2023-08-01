@@ -1,5 +1,7 @@
 <template>
   <rwc-category category-title="The Billing Calculator">
+    <p>Count: {{ data }}</p>
+    <br>
     <span class="rwa-button-group left-aligned">
       <span class="span1"></span>
       <button class="rwa-button" @click="toggleComponent('review')">Review</button>
@@ -42,10 +44,10 @@ import * as am5xy from "@amcharts/amcharts5/xy";
 
 import { onMounted } from "vue";
 import { onActivated } from "vue";
-import { useCounterStore } from "../stores/counter";
+import { useBillableData } from "../stores/counter";
 import { storeToRefs } from "pinia";
 
-const { count, name, doubleCount } = storeToRefs(useCounterStore());
+const { data } = storeToRefs(useBillableData());
 
 onMounted(() => {
   createChart();

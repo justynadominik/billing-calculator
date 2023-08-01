@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
     <div class = "cost">
         <rwc-text-input-field label="Estimaded cost $" value="0" disabled ></rwc-text-input-field>
@@ -8,11 +5,22 @@
     </div>
     <div>
         <span class="rwa-button-group left-aligned">
-            <button class="rwa-button" click.delegate="">Save</button>
+            <button class="rwa-button" @click="onSave()">Save</button>
             <button class="rwa-button" click.delegate="">Share</button>
         </span>
     </div>
 </template>
+
+<script setup lang="ts">
+import { CalculationService, BillingDataInput } from "../../calculator/CalculatorService"
+
+function onSave() {
+    const calculatoionService = new CalculationService();
+    const temp = new BillingDataInput();
+    calculatoionService.calculate(temp);
+}
+
+</script>
 
 <style lang="scss">
 .cost{

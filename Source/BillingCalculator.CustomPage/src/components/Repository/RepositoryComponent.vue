@@ -2,16 +2,37 @@
     <rwc-category category-title="Repository" collapsible>
         <span>
             <span class = "span1"></span>
-            <rwc-text-input-field label="Billable File Size" value="" edit-mode ></rwc-text-input-field>
+            <input label="Billable File Size" edit-mode v-model="inputBillableFileSizeRepo">
             <span class = "span1"></span>
-            <rwc-text-input-field label="Linked File Size" value="" edit-mode ></rwc-text-input-field>
+            <input label="Linked File Size" edit-mode v-model="inputTextLinkedFileSizeRepo">
             <span class = "span1"></span>
-            <rwc-text-input-field label="Text Only Documents" value="" edit-mode ></rwc-text-input-field>
+            <input label="Text Only Documents" edit-mode v-model="inputTextOnlyDocumentsRepo">
         </span>
     </rwc-category>
 </template>
 
 <script setup lang="ts">
+import { useBillableData } from "../../stores/counter";
+import { ref, watch } from "vue";
+
+const { changeRepoBillableFileSize, changeRepoLinkedFileSize, changeRepoTextOnlyDocument } = useBillableData();
+
+const inputBillableFileSizeRepo = ref(0);
+const inputTextOnlyDocumentsRepo = ref(0);
+const inputTextLinkedFileSizeRepo = ref(0);
+
+watch(inputBillableFileSizeRepo, (newValue: number) => {
+    changeRepoBillableFileSize(newValue);
+}, { immediate: true })
+
+watch(inputTextOnlyDocumentsRepo, (newValue: number) => {
+    changeRepoTextOnlyDocument(newValue);
+}, { immediate: true })
+
+watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
+    changeRepoLinkedFileSize(newValue);
+}, { immediate: true })
+
 </script>
 
 <style lang="scss">
