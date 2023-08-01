@@ -24,11 +24,19 @@
       <span class="span1"></span>
       <rwc-text-input-field label="Text Only Documents" value="" edit-mode></rwc-text-input-field>
     </span>
-    <div class="static-text">
-      <b>Billable File Size</b>
+    <div class="div1" white-space="nowrap">
+      <table>
+        <tr>
+          <td>
+            <static-text class="static-text"><b>Billable File Size</b></static-text>
+            <rwc-slider max="100" step="5" length="300px" orientation="horizontal" style="padding-top:50px; padding-bottom: 50px;"></rwc-slider>
+          </td>
+          <td>
+            <rwc-number-input-field label="GB" value="" edit-mode style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" ></rwc-number-input-field>
+          </td>
+        </tr>
+      </table>
     </div>
-    <rwc-slider max="27" step="3" length="300px" orientation="horizontal"
-      style="padding-top:50px; padding-bottom: 50px;"></rwc-slider>
   </rwc-category>
   <rwc-category category-title="Repository" collapsible>
     <span>
@@ -44,11 +52,14 @@
     <span>
       <span class="span1"></span>
       <rwc-text-input-field label="Billable File Size" value="" edit-mode></rwc-text-input-field>
+        <span class = "span1"></span>
+        <rwc-text-input-field label="Text Only Documents" value="" edit-mode ></rwc-text-input-field>
     </span>
   </rwc-category>
   <rwc-category category-title="Translate" collapsible>
     <span>
-      ???????
+      <span class = "span1"></span>
+        <rwc-text-input-field label="Billable Units" value="" edit-mode ></rwc-text-input-field>
     </span>
   </rwc-category>
 </template>
@@ -128,12 +139,12 @@ const { increment, decrement, changeName } = useCounterStore();
 
 .static-text {
   height: 3rem;
-  margin-top: 15px;
-  margin-left: 60px;
+  margin-top: 10px;
+  margin-left: 85px;
   font-family: "Roboto", arial, helvetica, sans-serif;
   font-weight: 700;
   float: left;
-  font-size: 14px;
+  font-size: 20px;
   text-align: center;
   vertical-align: middle;
   line-height: 3rem;
@@ -142,5 +153,12 @@ const { increment, decrement, changeName } = useCounterStore();
 .chart {
   width: 100%;
   height: 500px;
+}
+
+.div1{
+  margin-top: 20px;
+  margin-bottom: 0px;
+  border-top: 1px outset gray;
+  text-align: center;
 }
 </style>
