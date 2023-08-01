@@ -16,14 +16,6 @@
     <span>
       <div class="chart" id="chartdiv"></div>
     </span>
-    <br>
-    <p>Hey there, my name is {{ name }}</p>
-    <p>Count x 2: {{ doubleCount }}</p>
-    <p>Count: {{ count }}</p>
-    <br>
-    <button class="increase" @click="increment()">Increase +</button>
-    <button class="decrease" @click="decrement()">Decrease -</button>
-    <button @click="changeName()">Change Name</button>
   </rwc-category>
   <rwc-category category-title="Review" collapsible>
     <span>

@@ -1,6 +1,13 @@
 <template>
     <rwc-category category-title="Review" collapsible>
         <span>
+            <p>Hey there, my name is {{ name }}</p>
+            <p>Count x 2: {{ doubleCount }}</p>
+            <p>Count: {{ count }}</p>
+            <br>
+            <button class="increase" @click="increment()">Increase +</button>
+            <button class="decrease" @click="decrement()">Decrease -</button>
+            <button @click="changeName('Franklin')">Change Name</button>
             <span class = "span1"></span>
             <rwc-text-input-field label="Billable File Size" value="" edit-mode ></rwc-text-input-field>
             <span class = "span1"></span>
@@ -14,6 +21,12 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from "pinia";
+import { useCounterStore } from "../../stores/counter";
+
+const { count, name, doubleCount } = storeToRefs(useCounterStore());
+const { increment, decrement, changeName } = useCounterStore();
+
 </script>
 
 <style lang="scss">

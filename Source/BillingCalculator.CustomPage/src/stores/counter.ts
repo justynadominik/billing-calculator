@@ -14,8 +14,8 @@ export const useCounterStore = defineStore("counter", () => {
     count.value--;
   }
 
-  function changeName() {
-    name.value = "Franklin";
+  function changeName(newName: string) {
+    name.value = newName;
   }
 
   return { count, name, doubleCount, increment, decrement, changeName };
