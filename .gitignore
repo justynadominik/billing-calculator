@@ -4,6 +4,7 @@
 packages
 Artifacts/
 buildtools/*
+!buildtools/NpmBuildHelpers.psm1
 !buildtools/packages.config
 FunctionalTestSettings
 FunctionalTest.runsettings
@@ -15,4 +16,4 @@ FunctionalTest.runsettings
 Source/BillingCalculator.sln.DotSettings.user
 Source/BillingCalculator.CustomPage/cypress/screenshots
 .vscode/settings.json
-.idea
+*.idea

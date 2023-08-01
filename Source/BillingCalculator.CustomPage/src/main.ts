@@ -5,12 +5,6 @@ import { createPinia } from "pinia";
 import router from './router';
 
 import "./global.css";
-import {
-  KeplerProvider,
-  KeplerProviderKey,
-  S2ProviderKey,
-  S2Provider,
-} from "./libs";
 
 const start = async () => {
   config.iconSource = (
@@ -18,16 +12,7 @@ const start = async () => {
   ).default;
 
   createApp(App)
-    .provide(KeplerProviderKey, new KeplerProvider(""))
-    .provide(
-      S2ProviderKey,
-      new S2Provider(
-        "https://services.ctus.dev.k8s.r1.kcura.com/TBD-billing-service"
-      )
-    )
-
     .use(createPinia())
-    .use(router)
     .mount("#app");
 };
 

@@ -6,7 +6,7 @@
   <ResourceFiles />
   <ExternalTabs />
   <ExtractionDate>2023-04-18T14:32:11.0918078Z</ExtractionDate>
-  <Guid>043114cb-e885-47da-8836-a0693c8a73ac</Guid>
+  <Guid>3bcf0a34-7d43-45f0-b24f-479a90a2c004</Guid>
   <Name>BillingCalculator</Name>
   <Objects />
   <ParentTabs />
@@ -20,7 +20,7 @@
   <CustomPages>
     <CustomPage>
       <ArtifactID>1019333</ArtifactID>
-      <Guid>3eb10df5-622f-4934-929b-1410081a5675</Guid>
+      <Guid>c5f1c4b6-839d-4e65-adb1-105e5154b440</Guid>
       <ReadinessUrl>index.html</ReadinessUrl>
       <Name>BillingCalculator</Name>
       <FileName>dist.zip</FileName>

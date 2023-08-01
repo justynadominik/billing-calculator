@@ -63,6 +63,7 @@ export class ChartConfiguration {
         }
 
         series.bullets.push(function (root, series, dataItem) {
+            // @ts-ignore
             if (dataItem.dataContext.bullet) {
                 var container = am5.Container.new(root, {});
                 var circle0 = container.children.push(am5.Circle.new(root, {

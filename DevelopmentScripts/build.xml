@@ -9,7 +9,7 @@
         </Assemblies>
         <ResourceFiles />
         <CustomPages>
-          <CustomPage guid="3eb10df5-622f-4934-929b-1410081a5675">Source\BillingCalculator.CustomPage\dist</CustomPage>
+          <CustomPage guid="c5f1c4b6-839d-4e65-adb1-105e5154b440">Source\BillingCalculator.CustomPage\dist</CustomPage>
         </CustomPages>
       </Application>
     </Applications>
