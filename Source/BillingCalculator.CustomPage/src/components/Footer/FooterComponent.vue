@@ -13,11 +13,14 @@
 
 <script setup lang="ts">
 import { CalculationService, BillingDataInput } from "../../calculator/CalculatorService"
+import { storeToRefs } from "pinia";
+import { useBillableData } from "../../stores/counter";
 
 function onSave() {
     const calculatoionService = new CalculationService();
-    const temp = new BillingDataInput();
-    calculatoionService.calculate(temp);
+    const { data } = storeToRefs(useBillableData());
+    const temp = calculatoionService.calculate(data.value);
+    console.log(temp);
 }
 
 </script>
