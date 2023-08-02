@@ -47,7 +47,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" :step="stepRef" length="40rem" orientation="horizontal" :value="reviewData[3].dataInGb" @change="reviewData[3].dataInGb =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" :step="stepRef" length="40rem" orientation="horizontal" :value="reviewData[3].dataInGb" @change="reviewData[3].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
