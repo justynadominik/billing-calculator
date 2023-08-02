@@ -1,5 +1,7 @@
 import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
+import { ReviewCalculationInput } from "../calculator/ReviewCalculator";
+import { RepositoryCalculationInput } from "../calculator/RepositoryCalculator";
 
 export class ChartConfiguration {
 
@@ -161,19 +163,22 @@ export class ChartConfiguration {
     }
 
 
-    updateReview(index: number, value: number) {
-        this.reviewData[index].value = value
-        this.recalculateMax();
+    updateReview(newData: ReviewCalculationInput[]) {
+        newData.forEach((element, i) =>{
+            this.reviewData[i].value = element.dataInGb + element.textOnlyDocumentsCount/4000;
+        })
+        this.reviewSeries.data.setAll(this.reviewData);
     }
 
-    updateRepo(index: number, value: number) {
-        this.repoData[index].value = value
-        this.repoSeries.data.setAll(this.repoData);
-    }
-
-    updateLinkReview(index: number, value: number) {
-        this.linkReviewData[index].value = value
+    updateRepo(newData: RepositoryCalculationInput[], pickIndex: number) {
+        newData.forEach((element, i) =>{
+            this.repoData[i].value = element.totalBilliableFileSizeInGB;
+            this.repoData[i].bullet = false;
+            this.linkReviewData[i].value = element.linkedBilliableFileSizeInGB;
+        })
+        this.repoData[pickIndex].bullet = true;
         this.linkReviewSeries.data.setAll(this.linkReviewData);
+        this.repoSeries.data.setAll(this.repoData);
     }
 }
 export class Point {
