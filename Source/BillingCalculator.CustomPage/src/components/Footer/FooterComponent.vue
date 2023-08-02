@@ -5,7 +5,7 @@
     </div>
     <div>
         <span class="rwa-button-group left-aligned">
-            <button class="rwa-button" @click="onSave()">Save</button>
+            <button class="rwa-button">Save</button>
             <button class="rwa-button" click.delegate="">Share</button>
         </span>
     </div>
