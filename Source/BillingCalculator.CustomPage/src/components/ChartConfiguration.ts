@@ -61,7 +61,7 @@ export class ChartConfiguration {
         );
         this.linkReviewSeries = chart.series.push(
             am5xy.LineSeries.new(root, {
-                name: "Lined files",
+                name: "Linked files",
                 xAxis: xAxis,
                 yAxis: yAxis,
                 valueYField: "value",
@@ -163,20 +163,20 @@ export class ChartConfiguration {
     }
 
 
-    updateReview(newData: ReviewCalculationInput[]) {
+    updateReview(newData: ReviewCalculationInput[], pickIndex: number) {
         newData.forEach((element, i) =>{
             this.reviewData[i].value = element.dataInGb + element.textOnlyDocumentsCount/4000;
+            this.reviewData[i].bullet = false;
         })
+        this.reviewData[pickIndex].bullet = true;
         this.reviewSeries.data.setAll(this.reviewData);
     }
 
-    updateRepo(newData: RepositoryCalculationInput[], pickIndex: number) {
+    updateRepo(newData: RepositoryCalculationInput[]) {
         newData.forEach((element, i) =>{
             this.repoData[i].value = element.totalBilliableFileSizeInGB;
-            this.repoData[i].bullet = false;
             this.linkReviewData[i].value = element.linkedBilliableFileSizeInGB;
         })
-        this.repoData[pickIndex].bullet = true;
         this.linkReviewSeries.data.setAll(this.linkReviewData);
         this.repoSeries.data.setAll(this.repoData);
     }

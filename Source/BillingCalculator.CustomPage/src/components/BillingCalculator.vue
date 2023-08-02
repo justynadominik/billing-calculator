@@ -63,8 +63,8 @@ import {TranslateCalculatorInput} from "@/calculator/TranslateCalculator";
 
 const { data } = storeToRefs(useBillableData());
 
-const { repoBillableFileSize1, repoBillableFileSize2, repoBillableFileSize3, repoBillableFileSize4, repoBillableFileSize5 , repoData } = storeToRefs(useRepositoryStore());
-const { reviewBillableFileSize1, reviewBillableFileSize2, reviewBillableFileSize3, reviewBillableFileSize4, reviewBillableFileSize5, reviewData} = storeToRefs(useReviewStore());
+const { repoData } = storeToRefs(useRepositoryStore());
+const { reviewData} = storeToRefs(useReviewStore());
 
 const total = ref(0);
 
@@ -124,8 +124,8 @@ function recalculate() {
         }, 5],
       ]);
 
-      chartConfig.updateRepo(repoData.value, result.peekDay-1);
-      chartConfig.updateReview(reviewData.value);
+      chartConfig.updateRepo(repoData.value);
+      chartConfig.updateReview(reviewData.value, result.peekDay-1);
 
   total.value = result.totalCost();
 }
