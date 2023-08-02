@@ -9,7 +9,7 @@
                   <input label="Billable File Size" edit-mode v-model="inputBillableFileSizeReview">
               </td>
               <td>
-                <rwc-category category-title="Billable File Size Breakdown" style="font-weight: 700;" collapsible collapced reduced-spacing>
+                <rwc-category category-title="Billable File Size Breakdown" style="font-weight: 700;" collapsible collapsed reduced-spacing>
             <table>
                 <tr>
                   <td>
@@ -77,7 +77,7 @@
                   <input label="Text Only Documents" edit-mode v-model="inputTextOnlyDocumentsReview">
               </td>
               <td>
-                <rwc-category category-title="Text Only Documents Breakdown" style="font-weight: 700;" collapsible collapced reduced-spacing>
+                <rwc-category category-title="Text Only Documents Breakdown" style="font-weight: 700;" collapsible collapsed reduced-spacing>
         <table>
             <tr>
               <td>
