@@ -9,60 +9,60 @@
                   <input label="Billable File Size" edit-mode v-model="inputBillableFileSizeReview">
               </td>
               <td>
-                <rwc-category category-title="Bilable File Size Breakdown" style="font-weight: 700;" collapsible collapced reduced-spacing>
+                <rwc-category category-title="Billable File Size Breakdown" style="font-weight: 700;" collapsible collapced reduced-spacing>
             <table>
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewData[0].dataInGb" @change="reviewData[0].dataInGb =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" step="5" length="40rem" orientation="horizontal" :value="reviewData[0].dataInGb" @change="reviewData[0].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="reviewData[0].dataInGb" @change="reviewData[0].dataInGb =  $event.target.value">
+                    <rwc-number-input-field class="nif1" label="GB" :value="reviewData[0].dataInGb">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewData[1].dataInGb" @change="reviewData[1].dataInGb =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" step="5" length="40rem" orientation="horizontal" :value="reviewData[1].dataInGb" @change="reviewData[1].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="reviewData[1].dataInGb" @change="reviewData[1].dataInGb =  $event.target.value">
+                    <rwc-number-input-field class="nif1" label="GB" :value="reviewData[1].dataInGb">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewData[2].dataInGb" @change="reviewData[2].dataInGb =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" step="5" length="40rem" orientation="horizontal" :value="reviewData[2].dataInGb" @change="reviewData[2].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="reviewData[2].dataInGb" @change="reviewData[2].dataInGb =  $event.target.value">
+                    <rwc-number-input-field class="nif1" label="GB" :value="reviewData[2].dataInGb">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewBillableFileSize4" @click="changeReviewBillableFileSize4($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewData[3].dataInGb" @change="reviewData[3].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="reviewBillableFileSize4">
+                    <rwc-number-input-field class="nif1" label="GB" :value="reviewData[3].dataInGb">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewBillableFileSize5" @click="changeReviewBillableFileSize5($event.target.value)">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" step="5" length="40rem" orientation="horizontal" :value="reviewData[4].dataInGb" @change="reviewData[4].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field  class="nif1" label="GB" :value="reviewBillableFileSize5">
+                    <rwc-number-input-field  class="nif1" label="GB" :value="reviewData[4].dataInGb">
                     </rwc-number-input-field>
                   </td>
                 </tr>
@@ -82,55 +82,55 @@
             <tr>
               <td>
                 <static-text class="static-text2">Documents Count</static-text>
-                <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewTextOnlyDocuments1" @click="changeReviewTextOnlyDocuments1($event.target.value)">
+                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" step="5" length="40rem" orientation="horizontal" :value="reviewData[0].textOnlyDocumentsCount" @change="reviewData[0].textOnlyDocumentsCount =  $event.target.value">
                 </rwc-slider>
               </td>
               <td>
-                <rwc-number-input-field class="nif1" label="COUNT" :value="reviewTextOnlyDocuments1">
+                <rwc-number-input-field class="nif1" label="COUNT" :value="reviewData[0].textOnlyDocumentsCount">
                 </rwc-number-input-field>
               </td>
             </tr>
             <tr>
               <td>
                 <static-text class="static-text2">Documents Count</static-text>
-                <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewTextOnlyDocuments2" @click="changeReviewTextOnlyDocuments2($event.target.value)">
+                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" step="5" length="40rem" orientation="horizontal" :value="reviewData[1].textOnlyDocumentsCount" @change="reviewData[1].textOnlyDocumentsCount =  $event.target.value">
                 </rwc-slider>
               </td>
               <td>
-                <rwc-number-input-field class="nif1" label="COUNT" :value="reviewTextOnlyDocuments2">
+                <rwc-number-input-field class="nif1" label="COUNT" :value="reviewData[1].textOnlyDocumentsCount">
                 </rwc-number-input-field>
               </td>
             </tr>
             <tr>
               <td>
                 <static-text class="static-text2">Documents Count</static-text>
-                <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewTextOnlyDocuments3" @click="changeReviewTextOnlyDocuments3($event.target.value)">
+                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" step="5" length="40rem" orientation="horizontal" :value="reviewData[2].textOnlyDocumentsCount" @change="reviewData[2].textOnlyDocumentsCount =  $event.target.value">
                 </rwc-slider>
               </td>
               <td>
-                <rwc-number-input-field class="nif1" label="COUNT" :value="reviewTextOnlyDocuments3">
+                <rwc-number-input-field class="nif1" label="COUNT" :value="reviewData[2].textOnlyDocumentsCount">
                 </rwc-number-input-field>
               </td>
             </tr>
             <tr>
               <td>
                 <static-text class="static-text2">Documents Count</static-text>
-                <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewTextOnlyDocuments4" @click="changeReviewTextOnlyDocuments4($event.target.value)">
+                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" step="5" length="40rem" orientation="horizontal" :value="reviewData[3].textOnlyDocumentsCount" @change="reviewData[3].textOnlyDocumentsCount =  $event.target.value">
                 </rwc-slider>
               </td>
               <td>
-                <rwc-number-input-field class="nif1" label="COUNT" :value="reviewTextOnlyDocuments4">
+                <rwc-number-input-field class="nif1" label="COUNT" :value="reviewData[3].textOnlyDocumentsCount">
                 </rwc-number-input-field>
               </td>
             </tr>
             <tr>
               <td>
                 <static-text class="static-text2">Documents Count</static-text>
-                <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="reviewTextOnlyDocuments5" @click="changeReviewTextOnlyDocuments5($event.target.value)">
+                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" step="5" length="40rem" orientation="horizontal" :value="reviewData[4].textOnlyDocumentsCount" @change="reviewData[4].textOnlyDocumentsCount =  $event.target.value">
                 </rwc-slider>
               </td>
               <td>
-                <rwc-number-input-field class="nif1" label="COUNT" :value="reviewTextOnlyDocuments5">
+                <rwc-number-input-field class="nif1" label="COUNT" :value="reviewData[4].textOnlyDocumentsCount">
                 </rwc-number-input-field>
               </td>
             </tr>
@@ -150,11 +150,7 @@ import { ref, watch } from "vue";
 import { useReviewStore } from "../../stores/review";
 
 const { changeReviewBillableFileSize, changeReviewTextOnlyDocument } = useBillableData();
-const { reviewBillableFileSize1, reviewBillableFileSize2, reviewBillableFileSize3, reviewBillableFileSize4, reviewBillableFileSize5, reviewData } = storeToRefs(useReviewStore());
-const { changeReviewBillableFileSize1, changeReviewBillableFileSize2, changeReviewBillableFileSize3, changeReviewBillableFileSize4, changeReviewBillableFileSize5 } = useReviewStore();
-const { reviewTextOnlyDocuments1, reviewTextOnlyDocuments2, reviewTextOnlyDocuments3, reviewTextOnlyDocuments4, reviewTextOnlyDocuments5 } = storeToRefs(useReviewStore());
-const { changeReviewTextOnlyDocuments1, changeReviewTextOnlyDocuments2, changeReviewTextOnlyDocuments3, changeReviewTextOnlyDocuments4, changeReviewTextOnlyDocuments5 } = useReviewStore();
-
+const { reviewData } = storeToRefs(useReviewStore());
 
 const inputBillableFileSizeReview = ref(0);
 const inputTextOnlyDocumentsReview = ref(0);

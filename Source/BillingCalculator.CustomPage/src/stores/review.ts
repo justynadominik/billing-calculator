@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import {RepositoryCalculationInput} from "../calculator/RepositoryCalculator";
 import {ReviewCalculationInput} from "../calculator/ReviewCalculator";
 
 export const useReviewStore = defineStore("review", () => {

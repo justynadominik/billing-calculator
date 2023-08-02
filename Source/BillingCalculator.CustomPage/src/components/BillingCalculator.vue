@@ -63,8 +63,8 @@ import {TranslateCalculatorInput} from "../calculator/TranslateCalculator";
 
 const { data } = storeToRefs(useBillableData());
 
-const { repoBillableFileSize1, repoBillableFileSize2, repoBillableFileSize3, repoBillableFileSize4, repoBillableFileSize5 , repoData } = storeToRefs(useRepositoryStore());
-const { reviewBillableFileSize1, reviewBillableFileSize2, reviewBillableFileSize3, reviewBillableFileSize4, reviewBillableFileSize5, reviewData} = storeToRefs(useReviewStore());
+const { repoData } = storeToRefs(useRepositoryStore());
+const { reviewData} = storeToRefs(useReviewStore());
 
 const total = ref(0);
 
@@ -74,8 +74,13 @@ watch(data.value, () => {
   //total.value = temp.totalCost()
 })
 
-watch(reviewData.value, recalculate
-)
+let chartConfig : ChartConfiguration;
+onMounted(() => {
+  chartConfig = new ChartConfiguration;
+});
+
+watch(reviewData.value, recalculate);
+watch(repoData.value, recalculate);
 
 function recalculate() {
   const calculationService = new CalculationService();
@@ -119,42 +124,11 @@ function recalculate() {
         }, 5],
       ]);
 
+      chartConfig.updateRepo(repoData.value);
+      chartConfig.updateReview(reviewData.value, result.peekDay-1);
+
   total.value = result.totalCost();
 }
-
-
-let chartConfig : ChartConfiguration;
-onMounted(() => {
-  chartConfig = new ChartConfiguration;
-});
-
-watch(repoBillableFileSize1, ()=> chartConfig.updateRepo(0,repoBillableFileSize1.value));
-watch(repoBillableFileSize2, ()=> chartConfig.updateRepo(1,repoBillableFileSize2.value));
-watch(repoBillableFileSize3, ()=> chartConfig.updateRepo(2,repoBillableFileSize3.value));
-watch(repoBillableFileSize4, ()=> chartConfig.updateRepo(3,repoBillableFileSize4.value));
-watch(repoBillableFileSize5, ()=> chartConfig.updateRepo(4,repoBillableFileSize5.value));
-
-watch(reviewBillableFileSize1, ()=> { chartConfig.updateReview(0,reviewBillableFileSize1.value); calculate()});
-watch(reviewBillableFileSize2, ()=> chartConfig.updateReview(1,reviewBillableFileSize2.value));
-watch(reviewBillableFileSize3, ()=> chartConfig.updateReview(2,reviewBillableFileSize3.value));
-watch(reviewBillableFileSize4, ()=> chartConfig.updateReview(3,reviewBillableFileSize4.value));
-watch(reviewBillableFileSize5, ()=> chartConfig.updateReview(4,reviewBillableFileSize5.value));
-
-
-function calculate() {
-  /*const calculationService = new CalculationService();
-
-  let repoBillable = [repoBillableFileSize1.value, repoBillableFileSize2.value, repoBillableFileSize3.value, repoBillableFileSize4.value, repoBillableFileSize5.value]
-
-  let input : [calculationInput: BillingDataInput, day: number][] = []
-  for (let i = 0; i < 5; i++) {
-    input.push(,i+1)
-  }
-
-
-  const temp = calculationService.calculateForMonth()*/
-}
-
 
 const showReviewComponent = ref(false);
 const showRepoComponent = ref(false);
