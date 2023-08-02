@@ -15,7 +15,14 @@
     </span>
   </rwc-category>
   <rwc-category category-title="Chart">
-    <div id="chartdiv" class="chart"></div>
+    <div class="row">
+      <div id="chartdiv" class="chart column1"/>
+
+      <div class="column2">
+        <PieChart/>
+      </div>
+
+    </div>
   </rwc-category>
 
   <rwc-text-input-field label="Estimaded cost $" :value="total" disabled ></rwc-text-input-field>
@@ -60,8 +67,12 @@ import {RepositoryCalculationInput} from "@/calculator/RepositoryCalculator";
 import {ColdStorageCalculationInput} from "@/calculator/ColdStorageCalculator";
 import {StagingCalculationInput} from "@/calculator/StagingCalculator";
 import {TranslateCalculatorInput} from "@/calculator/TranslateCalculator";
+import PieChart from "@/components/PieChart.vue";
+import {calculationResult} from "@/stores/calculationResult";
 
 const { data } = storeToRefs(useBillableData());
+const { calcResult} = storeToRefs(calculationResult());
+const {changeResult } = calculationResult();
 
 const { repoData } = storeToRefs(useRepositoryStore());
 const { reviewData} = storeToRefs(useReviewStore());
@@ -128,6 +139,8 @@ function recalculate() {
       chartConfig.updateReview(reviewData.value, result.peekDay-1);
 
   total.value = result.totalCost();
+  changeResult(result);
+  console.log('changed' + result.totalCost());
 }
 
 const showReviewComponent = ref(false);
@@ -155,6 +168,8 @@ const toggleComponent = (component: string) => {
 }
 </script>
 
+
+
 <style lang="scss">
 .span1 {
   background: inherit;
@@ -168,5 +183,19 @@ const toggleComponent = (component: string) => {
 .chart{
   width: 100%;
   height: 250px;
+}
+
+.column1 {
+  float: left;
+  width: 70%;
+}
+
+.column2 {
+  float: left;
+  width: 30%;
+}
+
+.row {
+  display: flex;
 }
 </style>
