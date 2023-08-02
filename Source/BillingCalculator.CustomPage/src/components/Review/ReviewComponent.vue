@@ -16,7 +16,7 @@
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB"  :value="reviewData[0].dataInGb">
+                    <rwc-number-input-field class="nif1" label="GB" :value="reviewData[0].dataInGb">
                     </rwc-number-input-field>
                   </td>
                 </tr>
@@ -136,8 +136,7 @@ import { ref, watch } from "vue";
 import { useReviewStore } from "../../stores/review";
 
 const { changeReviewBillableFileSize, changeReviewTextOnlyDocument } = useBillableData();
-const { reviewBillableFileSize1, reviewBillableFileSize2, reviewBillableFileSize3, reviewBillableFileSize4, reviewBillableFileSize5, reviewData } = storeToRefs(useReviewStore());
-const { changeBillableFileSize1, changeBillableFileSize2, changeBillableFileSize3, changeBillableFileSize4, changeBillableFileSize5 } = useReviewStore();
+const { reviewData } = storeToRefs(useReviewStore());
 
 const inputBillableFileSizeReview = ref(0);
 const inputTextOnlyDocumentsReview = ref(0);
