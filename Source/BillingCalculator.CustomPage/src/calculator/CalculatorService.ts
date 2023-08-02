@@ -49,6 +49,15 @@ export class BillingCalculationResult {
     this.stagingResult = stagingResult;
     this.peekDay = peekDay;
   }
+
+  totalCost(): number {
+    return (
+        this.reviewResult.amount +
+        this.repoResult.amount +
+        this.coldStorageResult.amount +
+        this.stagingResult.amount
+    );
+  }
 }
 
 export class CalculationService {
