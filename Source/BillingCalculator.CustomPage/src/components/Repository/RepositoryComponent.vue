@@ -14,7 +14,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="3000" step="100" length="300px" orientation="horizontal" :value="repoBillableFileSize1" @click="changeRepoBillableFileSize1($event.target.value)">
+                    <rwc-slider class="slider-style" max="3000" step="100" length="40rem" orientation="horizontal" :value="repoBillableFileSize1" @click="changeRepoBillableFileSize1($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -25,7 +25,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoBillableFileSize2" @click="changeRepoBillableFileSize2($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoBillableFileSize2" @click="changeRepoBillableFileSize2($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -36,7 +36,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoBillableFileSize3" @click="changeRepoBillableFileSize3($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoBillableFileSize3" @click="changeRepoBillableFileSize3($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -47,7 +47,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoBillableFileSize4" @click="changeRepoBillableFileSize4($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoBillableFileSize4" @click="changeRepoBillableFileSize4($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -58,7 +58,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoBillableFileSize5" @click="changeRepoBillableFileSize5($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoBillableFileSize5" @click="changeRepoBillableFileSize5($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -82,7 +82,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoLinkedFileSize1" @click="changeRepoLinkedFileSize1($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoLinkedFileSize1" @click="changeRepoLinkedFileSize1($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -93,7 +93,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoLinkedFileSize2" @click="changeRepoLinkedFileSize2($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoLinkedFileSize2" @click="changeRepoLinkedFileSize2($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -104,7 +104,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoLinkedFileSize3" @click="changeRepoLinkedFileSize3($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoLinkedFileSize3" @click="changeRepoLinkedFileSize3($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -115,7 +115,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoLinkedFileSize4" @click="changeRepoLinkedFileSize4($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoLinkedFileSize4" @click="changeRepoLinkedFileSize4($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -126,7 +126,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoLinkedFileSize5" @click="changeRepoLinkedFileSize5($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoLinkedFileSize5" @click="changeRepoLinkedFileSize5($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -150,7 +150,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoTextOnlyDocuments1" @click="changeRepoTextOnlyDocuments1($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoTextOnlyDocuments1" @click="changeRepoTextOnlyDocuments1($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -161,7 +161,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoTextOnlyDocuments2" @click="changeRepoTextOnlyDocuments2($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoTextOnlyDocuments2" @click="changeRepoTextOnlyDocuments2($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -172,7 +172,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoTextOnlyDocuments3" @click="changeRepoTextOnlyDocuments3($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoTextOnlyDocuments3" @click="changeRepoTextOnlyDocuments3($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -183,7 +183,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoTextOnlyDocuments4" @click="changeRepoTextOnlyDocuments4($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoTextOnlyDocuments4" @click="changeRepoTextOnlyDocuments4($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -194,7 +194,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal" :value="repoTextOnlyDocuments5" @click="changeRepoTextOnlyDocuments5($event.target.value)">
+                    <rwc-slider class="slider-style" max="100" step="5" length="40rem" orientation="horizontal" :value="repoTextOnlyDocuments5" @click="changeRepoTextOnlyDocuments5($event.target.value)">
                     </rwc-slider>
                   </td>
                   <td>
@@ -257,7 +257,7 @@ watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
 .static-text{
     height: 3rem;
 	margin-top: 10px;
-	margin-left: 85px;
+	margin-left: 80px;
     margin-right: 25px;
     font-family: "Roboto", arial, helvetica, sans-serif;
 	font-weight: 700;
@@ -272,7 +272,7 @@ watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
 .static-text1{
     height: 3rem;
 	margin-top: 10px;
-	margin-left: 89px;
+	margin-left: 80px;
     margin-right: 25px;
     font-family: "Roboto", arial, helvetica, sans-serif;
 	font-weight: 700;
@@ -287,7 +287,7 @@ watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
 .static-text2{
     height: 3rem;
 	margin-top: 10px;
-	margin-left: 56px;
+	margin-left: 25px;
     margin-right: 25px;
     font-family: "Roboto", arial, helvetica, sans-serif;
 	font-weight: 700;
@@ -323,9 +323,9 @@ watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
 }
 
 .slider-style{
-    margin-right: 20px;
-    padding-left: 20px;
-    padding-top: 10px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-top: 0px;
     padding-bottom: 10px;
 }
 

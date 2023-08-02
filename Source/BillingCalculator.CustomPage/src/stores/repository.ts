@@ -37,7 +37,7 @@ export const useRepositoryStore = defineStore("repository", () => {
     }
 
     function changeRepoBillableFileSize5(newValue: string) {
-        repoTextOnlyDocuments1.value = parseInt(newValue)
+        repoBillableFileSize5.value = parseInt(newValue)
     }
 
     function changeRepoTextOnlyDocuments1(newValue: string) {
