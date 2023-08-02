@@ -73,20 +73,25 @@ export class ChartConfiguration {
             strokeWidth: 3,
             strokeDasharray: [10,5]
           });
+        this.sumSeries.set("stroke", am5.color("#a6a6a6"));
+
         var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
         cursor.lineY.set("visible", false);
 
         for (let i = 0; i < 5; i++) {
             this.reviewData.push({
-                date: new Date(2023, 8, i * 7 + 1).getTime(), value: 0,
+                date: new Date(2023, 8, i * 7 + 1).getTime(),
+                value: 0,
                 bullet: false
             });
             this.repoData.push({
-                date: new Date(2023, 8, i * 7 + 1).getTime(), value: 0,
+                date: new Date(2023, 8, i * 7 + 1).getTime(),
+                value: 0,
                 bullet: false
             });
             this.sumData.push({
-                date: new Date(2023, 8, i * 7 + 1).getTime(), value: 0,
+                date: new Date(2023, 8, i * 7 + 1).getTime(),
+                value: 0,
                 bullet: false
             });
         }
@@ -129,37 +134,33 @@ export class ChartConfiguration {
         this.repoSeries.data.setAll(this.repoData);
         this.sumSeries.data.setAll(this.sumData);
     }
-    recalculateMax() {
+    recalculateMax(index: number) {
+        this.sumData[index].value =  this.repoData[index].value + this.reviewData[index].value
+
         let maxValue = this.sumData[0].value;
         let maxIndex = 0;
-        this.sumData.forEach((element, index) => {
-            element.value = this.repoData[index].value + this.reviewData[index].value;
+        this.sumData.forEach((element, i) => {
             element.bullet = false;
             if (maxValue < element.value) {
                 maxValue = element.value;
-                maxIndex = index;
+                maxIndex = i;
             }
         });
         this.sumData[maxIndex].bullet = true;
-        this.sumSeries.data.clear();
         this.sumSeries.data.setAll(this.sumData);
     }
 
 
     updateReview(index: number, value: number) {
-        this.reviewSeries.data.setIndex(index, {
-            date: new Date(2023, 8, index * 7 + 1).getTime(),
-            value: value
-        });
-        this.recalculateMax();
+        this.reviewData[index].value = value
+        this.reviewSeries.data.setAll(this.reviewData);
+        this.recalculateMax(index);
     }
 
     updateRepo(index: number, value: number) {
-        this.repoSeries.data.setIndex(index, {
-            date: new Date(2023, 8, index * 7 + 1).getTime(),
-            value: value
-        });
-        this.recalculateMax();
+        this.repoData[index].value = value
+        this.repoSeries.data.setAll(this.repoData);
+        this.recalculateMax(index);
     }
 }
 export class Point {
