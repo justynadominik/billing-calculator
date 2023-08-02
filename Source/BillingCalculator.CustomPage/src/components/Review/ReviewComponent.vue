@@ -12,7 +12,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text"><b>Billable File Size</b></static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" step="5" length="300px" orientation="horizontal" :value="reviewData[0].dataInGb" @change="reviewData[0].dataInGb =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" :step="stepRef" length="300px" orientation="horizontal" :value="reviewData[0].dataInGb" @change="reviewData[0].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -23,7 +23,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text"><b>Billable File Size</b></static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" step="5" length="300px" orientation="horizontal" :value="reviewData[1].dataInGb" @change="reviewData[1].dataInGb =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" :step="stepRef" length="300px" orientation="horizontal" :value="reviewData[1].dataInGb" @change="reviewData[1].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -34,7 +34,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text"><b>Billable File Size</b></static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" step="5" length="300px" orientation="horizontal" :value="reviewData[2].dataInGb" @change="reviewData[2].dataInGb =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" :step="stepRef" length="300px" orientation="horizontal" :value="reviewData[2].dataInGb" @change="reviewData[2].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -45,7 +45,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text"><b>Billable File Size</b></static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" step="5" length="300px" orientation="horizontal" :value="reviewData[3].dataInGb" @change="reviewData[3].dataInGb =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" :step="stepRef" length="300px" orientation="horizontal" :value="reviewData[3].dataInGb" @change="reviewData[3].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -56,7 +56,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text"><b>Billable File Size</b></static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" step="5" length="300px" orientation="horizontal" :value="reviewData[4].dataInGb" @change="reviewData[4].dataInGb =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeReview" :step="stepRef" length="300px" orientation="horizontal" :value="reviewData[4].dataInGb" @change="reviewData[4].dataInGb =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -71,7 +71,7 @@
             <tr>
               <td>
                 <static-text class="static-text2"><b>Text Only Documents</b></static-text>
-                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" step="5" length="300px" orientation="horizontal" :value="reviewData[0].textOnlyDocumentsCount" @change="reviewData[0].textOnlyDocumentsCount =  $event.target.value">
+                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" :step="stepRefText" length="300px" orientation="horizontal" :value="reviewData[0].textOnlyDocumentsCount" @change="reviewData[0].textOnlyDocumentsCount =  $event.target.value">
                 </rwc-slider>
               </td>
               <td>
@@ -82,7 +82,7 @@
             <tr>
               <td>
                 <static-text class="static-text2"><b>Text Only Documents</b></static-text>
-                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" step="5" length="300px" orientation="horizontal" :value="reviewData[1].textOnlyDocumentsCount" @change="reviewData[1].textOnlyDocumentsCount =  $event.target.value">
+                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" :step="stepRefText" length="300px" orientation="horizontal" :value="reviewData[1].textOnlyDocumentsCount" @change="reviewData[1].textOnlyDocumentsCount =  $event.target.value">
                 </rwc-slider>
               </td>
               <td>
@@ -93,7 +93,7 @@
             <tr>
               <td>
                 <static-text class="static-text2"><b>Text Only Documents</b></static-text>
-                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" step="5" length="300px" orientation="horizontal" :value="reviewData[2].textOnlyDocumentsCount" @change="reviewData[2].textOnlyDocumentsCount =  $event.target.value">
+                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" :step="stepRefText" length="300px" orientation="horizontal" :value="reviewData[2].textOnlyDocumentsCount" @change="reviewData[2].textOnlyDocumentsCount =  $event.target.value">
                 </rwc-slider>
               </td>
               <td>
@@ -104,7 +104,7 @@
             <tr>
               <td>
                 <static-text class="static-text2"><b>Text Only Documents</b></static-text>
-                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" step="5" length="300px" orientation="horizontal" :value="reviewData[3].textOnlyDocumentsCount" @change="reviewData[3].textOnlyDocumentsCount =  $event.target.value">
+                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" :step="stepRefText" length="300px" orientation="horizontal" :value="reviewData[3].textOnlyDocumentsCount" @change="reviewData[3].textOnlyDocumentsCount =  $event.target.value">
                 </rwc-slider>
               </td>
               <td>
@@ -115,7 +115,7 @@
             <tr>
               <td>
                 <static-text class="static-text2"><b>Text Only Documents</b></static-text>
-                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" step="5" length="300px" orientation="horizontal" :value="reviewData[4].textOnlyDocumentsCount" @change="reviewData[4].textOnlyDocumentsCount =  $event.target.value">
+                <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsReview" :step="stepRefText" length="300px" orientation="horizontal" :value="reviewData[4].textOnlyDocumentsCount" @change="reviewData[4].textOnlyDocumentsCount =  $event.target.value">
                 </rwc-slider>
               </td>
               <td>
@@ -141,12 +141,17 @@ const { reviewData } = storeToRefs(useReviewStore());
 const inputBillableFileSizeReview = ref(0);
 const inputTextOnlyDocumentsReview = ref(0);
 
+const stepRef = ref(10);
+const stepRefText = ref(10);
+
 watch(inputBillableFileSizeReview, (newValue: number) => {
     changeReviewBillableFileSize(newValue);
+    stepRef.value = Number(newValue) / 10;
 }, { immediate: true })
 
 watch(inputTextOnlyDocumentsReview, (newValue: number) => {
     changeReviewTextOnlyDocument(newValue);
+    stepRefText.value = Number(newValue) / 10;
 }, { immediate: true })
 
 </script>

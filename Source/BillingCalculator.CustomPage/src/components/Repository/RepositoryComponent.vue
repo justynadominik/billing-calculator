@@ -14,7 +14,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" step="100" length="40rem" orientation="horizontal"  :value="repoData[0].totalBilliableFileSizeInGB" @change="repoData[0].totalBilliableFileSizeInGB =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="40rem" orientation="horizontal"  :value="repoData[0].totalBilliableFileSizeInGB" @change="repoData[0].totalBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -25,7 +25,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[1].totalBilliableFileSizeInGB" @change="repoData[1].totalBilliableFileSizeInGB =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="40rem" orientation="horizontal" :value="repoData[1].totalBilliableFileSizeInGB" @change="repoData[1].totalBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -36,7 +36,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[2].totalBilliableFileSizeInGB" @change="repoData[2].totalBilliableFileSizeInGB =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="40rem" orientation="horizontal" :value="repoData[2].totalBilliableFileSizeInGB" @change="repoData[2].totalBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -47,7 +47,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[3].totalBilliableFileSizeInGB" @change="repoData[3].totalBilliableFileSizeInGB =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="40rem" orientation="horizontal" :value="repoData[3].totalBilliableFileSizeInGB" @change="repoData[3].totalBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -58,7 +58,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[4].totalBilliableFileSizeInGB" @change="repoData[4].totalBilliableFileSizeInGB =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="40rem" orientation="horizontal" :value="repoData[4].totalBilliableFileSizeInGB" @change="repoData[4].totalBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -82,7 +82,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[0].linkedBilliableFileSizeInGB" @change="repoData[0].linkedBilliableFileSizeInGB =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="40rem" orientation="horizontal" :value="repoData[0].linkedBilliableFileSizeInGB" @change="repoData[0].linkedBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -93,7 +93,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[1].linkedBilliableFileSizeInGB" @change="repoData[1].linkedBilliableFileSizeInGB =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="40rem" orientation="horizontal" :value="repoData[1].linkedBilliableFileSizeInGB" @change="repoData[1].linkedBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -104,7 +104,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[2].linkedBilliableFileSizeInGB" @change="repoData[2].linkedBilliableFileSizeInGB =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="40rem" orientation="horizontal" :value="repoData[2].linkedBilliableFileSizeInGB" @change="repoData[2].linkedBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -115,7 +115,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[3].linkedBilliableFileSizeInGB" @change="repoData[3].linkedBilliableFileSizeInGB =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="40rem" orientation="horizontal" :value="repoData[3].linkedBilliableFileSizeInGB" @change="repoData[3].linkedBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -126,7 +126,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[4].linkedBilliableFileSizeInGB" @change="repoData[4].linkedBilliableFileSizeInGB =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="40rem" orientation="horizontal" :value="repoData[4].linkedBilliableFileSizeInGB" @change="repoData[4].linkedBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -150,7 +150,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[0].textOnlyDocumentsCount" @change="repoData[0].textOnlyDocumentsCount =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="40rem" orientation="horizontal" :value="repoData[0].textOnlyDocumentsCount" @change="repoData[0].textOnlyDocumentsCount =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -161,7 +161,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[1].textOnlyDocumentsCount" @change="repoData[1].textOnlyDocumentsCount =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="40rem" orientation="horizontal" :value="repoData[1].textOnlyDocumentsCount" @change="repoData[1].textOnlyDocumentsCount =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -172,7 +172,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[2].textOnlyDocumentsCount" @change="repoData[2].textOnlyDocumentsCount =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="40rem" orientation="horizontal" :value="repoData[2].textOnlyDocumentsCount" @change="repoData[2].textOnlyDocumentsCount =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -183,7 +183,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[3].textOnlyDocumentsCount" @change="repoData[3].textOnlyDocumentsCount =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="40rem" orientation="horizontal" :value="repoData[3].textOnlyDocumentsCount" @change="repoData[3].textOnlyDocumentsCount =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -194,7 +194,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" step="5" length="40rem" orientation="horizontal" :value="repoData[4].textOnlyDocumentsCount" @change="repoData[4].textOnlyDocumentsCount =  $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="40rem" orientation="horizontal" :value="repoData[4].textOnlyDocumentsCount" @change="repoData[4].textOnlyDocumentsCount =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -224,16 +224,23 @@ const inputBillableFileSizeRepo = ref(0);
 const inputTextOnlyDocumentsRepo = ref(0);
 const inputTextLinkedFileSizeRepo = ref(0);
 
+const stepRef = ref(10);
+const stepRefLink = ref(10);
+const stepRefText = ref(10);
+
 watch(inputBillableFileSizeRepo, (newValue: number) => {
     changeRepoBillableFileSize(newValue);
+    stepRef.value = Number(newValue) / 10;
 }, { immediate: true })
 
 watch(inputTextOnlyDocumentsRepo, (newValue: number) => {
     changeRepoTextOnlyDocument(newValue);
+    stepRefText.value = Number(newValue) / 10;
 }, { immediate: true })
 
 watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
     changeRepoLinkedFileSize(newValue);
+    stepRefLink.value = Number(newValue) / 10;
 }, { immediate: true })
 
 </script>
