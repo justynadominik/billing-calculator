@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
+import {RepositoryCalculationInput} from "../calculator/RepositoryCalculator";
 
 export const useRepositoryStore = defineStore("repository", () => {
     const repoBillableFileSize1 = ref(0);
@@ -19,6 +20,35 @@ export const useRepositoryStore = defineStore("repository", () => {
     const repoLinkedFileSize3 = ref(0);
     const repoLinkedFileSize4 = ref(0);
     const repoLinkedFileSize5 = ref(0);
+
+    const repoData = ref<RepositoryCalculationInput[]>(
+        [
+            {
+                totalBilliableFileSizeInGB: 0,
+                textOnlyDocumentsCount: 0,
+                reviewPeek: 0,
+                linkedBilliableFileSizeInGB : 0 },
+            {
+                totalBilliableFileSizeInGB: 0,
+                textOnlyDocumentsCount: 0,
+                reviewPeek: 0,
+                linkedBilliableFileSizeInGB : 0 },
+            {
+                totalBilliableFileSizeInGB: 0,
+                textOnlyDocumentsCount: 0,
+                reviewPeek: 0,
+                linkedBilliableFileSizeInGB : 0 },
+            {
+                totalBilliableFileSizeInGB: 0,
+                textOnlyDocumentsCount: 0,
+                reviewPeek: 0,
+                linkedBilliableFileSizeInGB : 0 },
+            {
+                totalBilliableFileSizeInGB: 0,
+                textOnlyDocumentsCount: 0,
+                reviewPeek: 0,
+                linkedBilliableFileSizeInGB : 0 },
+        ]);
 
     function changeRepoBillableFileSize1(newValue: string) {
         repoBillableFileSize1.value = parseInt(newValue);
@@ -109,7 +139,8 @@ export const useRepositoryStore = defineStore("repository", () => {
         changeRepoLinkedFileSize2,
         changeRepoLinkedFileSize3,
         changeRepoLinkedFileSize4,
-        changeRepoLinkedFileSize5
+        changeRepoLinkedFileSize5,
+        repoData: repoData
     };
   }
 );
