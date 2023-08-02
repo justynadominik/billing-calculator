@@ -12,6 +12,10 @@ import {
   StagingCalculationInput,
   StagingCalculator,
 } from "./StagingCalculator";
+import {
+  TranslateCalculatorInput,
+  TranslateCalculator,
+} from "./TranslateCalculator";
 import { CalculationResult } from "./CalculationResult";
 
 export class BillingData {
@@ -27,6 +31,7 @@ export class BillingDataInput {
   repoData!: RepositoryCalculationInput;
   coldStorageData!: ColdStorageCalculationInput;
   stagingData!: StagingCalculationInput;
+  translateData!: TranslateCalculatorInput;
 }
 
 export class BillingCalculationResult {
@@ -34,6 +39,7 @@ export class BillingCalculationResult {
   repoResult: CalculationResult;
   coldStorageResult: CalculationResult;
   stagingResult: CalculationResult;
+  translateResult: CalculationResult;
   peekDay: number;
 
   constructor(
@@ -41,12 +47,14 @@ export class BillingCalculationResult {
     repoResult: CalculationResult,
     coldStorageResult: CalculationResult,
     stagingResult: CalculationResult,
+    translateResult: CalculationResult,
     peekDay: number = 1
   ) {
     this.reviewResult = reviewResult;
     this.repoResult = repoResult;
     this.coldStorageResult = coldStorageResult;
     this.stagingResult = stagingResult;
+    this.translateResult = translateResult;
     this.peekDay = peekDay;
   }
 
@@ -55,7 +63,8 @@ export class BillingCalculationResult {
         this.reviewResult.amount +
         this.repoResult.amount +
         this.coldStorageResult.amount +
-        this.stagingResult.amount
+        this.stagingResult.amount +
+        this.translateResult.amount
     );
   }
 }
@@ -64,6 +73,7 @@ export class CalculationService {
   calculate(dataInput: BillingDataInput): BillingCalculationResult {
     var reviewCalculator = new ReviewCalculator(this.getDefaultReviewTiers());
     var repoCalculator = new RepositoryCalculator(this.getDefaultRepoTiers());
+    var translateCalculator = new TranslateCalculator();
     var coldStorageCalculator = new ColdStorageCalculator(
       this.getDefaultColdStorageTiers()
     );
@@ -71,6 +81,7 @@ export class CalculationService {
       this.getDefaultStagingTiers()
     );
 
+    var translateResult = translateCalculator.calculate(dataInput.translateData);
     var reviewResult = reviewCalculator.calculate(dataInput.reviewData);
     var repoResult = repoCalculator.calculate(dataInput.repoData);
     var coldStorageResult = coldStorageCalculator.calculate(
@@ -78,11 +89,13 @@ export class CalculationService {
     );
     var stagingResult = stagingCalculator.calculate(dataInput.stagingData);
 
+
     return new BillingCalculationResult(
       reviewResult,
       repoResult,
       coldStorageResult,
-      stagingResult
+      stagingResult,
+      translateResult
     );
   }
 
