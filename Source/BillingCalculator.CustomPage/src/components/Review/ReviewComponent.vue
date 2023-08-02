@@ -16,8 +16,7 @@
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field label="GB" :value="reviewBillableFileSize1" edit-mode
-                        style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" >
+                    <rwc-number-input-field class="nif1" label="GB" :value="reviewBillableFileSize1" edit-mode>
                     </rwc-number-input-field>
                   </td>
                 </tr>
@@ -28,8 +27,7 @@
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field label="GB" :value="reviewBillableFileSize2" edit-mode
-                        style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" >
+                    <rwc-number-input-field class="nif1" label="GB" :value="reviewBillableFileSize2" edit-mode>
                     </rwc-number-input-field>
                   </td>
                 </tr>
@@ -40,8 +38,7 @@
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field label="GB" :value="reviewBillableFileSize3" edit-mode
-                        style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" >
+                    <rwc-number-input-field class="nif1" label="GB" :value="reviewBillableFileSize3" edit-mode>
                     </rwc-number-input-field>
                   </td>
                 </tr>
@@ -52,8 +49,7 @@
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field label="GB" :value="reviewBillableFileSize4" edit-mode
-                        style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" >
+                    <rwc-number-input-field class="nif1" label="GB" :value="reviewBillableFileSize4" edit-mode>
                     </rwc-number-input-field>
                   </td>
                 </tr>
@@ -64,13 +60,71 @@
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field label="GB" :value="reviewBillableFileSize5" edit-mode
-                        style="padding-right: 0px; margin-right: 0px; border-spacing: 0px;" >
+                    <rwc-number-input-field  class="nif1" label="GB" :value="reviewBillableFileSize5" edit-mode>
                     </rwc-number-input-field>
                   </td>
                 </tr>
             </table>
         </rwc-category>
+        <rwc-category category-title="Text Only Documents Breakdown" collapsible collapced reduced-spacing>
+        <table>
+            <tr>
+              <td>
+                <static-text class="static-text2"><b>Text Only Documents</b></static-text>
+                <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal">
+                </rwc-slider>
+              </td>
+              <td>
+                <rwc-number-input-field class="nif1" label="COUNT" value="" edit-mode>
+                </rwc-number-input-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <static-text class="static-text2"><b>Text Only Documents</b></static-text>
+                <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal">
+                </rwc-slider>
+              </td>
+              <td>
+                <rwc-number-input-field class="nif1" label="COUNT" value="" edit-mode>
+                </rwc-number-input-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <static-text class="static-text2"><b>Text Only Documents</b></static-text>
+                <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal">
+                </rwc-slider>
+              </td>
+              <td>
+                <rwc-number-input-field class="nif1" label="COUNT" value="" edit-mode>
+                </rwc-number-input-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <static-text class="static-text2"><b>Text Only Documents</b></static-text>
+                <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal">
+                </rwc-slider>
+              </td>
+              <td>
+                <rwc-number-input-field class="nif1" label="COUNT" value="" edit-mode>
+                </rwc-number-input-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <static-text class="static-text2"><b>Text Only Documents</b></static-text>
+                <rwc-slider class="slider-style" max="100" step="5" length="300px" orientation="horizontal">
+                </rwc-slider>
+              </td>
+              <td>
+                <rwc-number-input-field class="nif1" label="COUNT" value="" edit-mode>
+                </rwc-number-input-field>
+              </td>
+            </tr>
+        </table>
+    </rwc-category>
         </div>
     </rwc-category>
 </template>
@@ -124,6 +178,21 @@ watch(inputTextOnlyDocumentsReview, (newValue: number) => {
 	line-height: 3rem;
 }
 
+.static-text2{
+    height: 3rem;
+	margin-top: 10px;
+	margin-left: 56px;
+    margin-right: 25px;
+    font-family: "Roboto", arial, helvetica, sans-serif;
+	font-weight: 700;
+	float: left;
+    font-size: 13.5px;
+    opacity: 0.9;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 3rem;
+}
+
 .div1{
     white-space: "nowrap";
     margin-top: 20px;
@@ -137,5 +206,12 @@ watch(inputTextOnlyDocumentsReview, (newValue: number) => {
     padding-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.nif1{
+    margin-left: 40px;
+    padding-right: 0px;
+    margin-right: -3px;
+    border-spacing: 0px;
 }
 </style>
