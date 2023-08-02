@@ -6,6 +6,7 @@ import { RepositoryCalculationInput } from "../calculator/RepositoryCalculator";
 import { ReviewCalculationInput } from "../calculator/ReviewCalculator";
 import { ColdStorageCalculationInput } from "../calculator/ColdStorageCalculator";
 import { StagingCalculationInput } from "../calculator/StagingCalculator";
+import { TranslateCalculatorInput } from "../calculator/TranslateCalculator";
 
 export const useBillableData = defineStore("billableData", () => {
   const data = ref<BillingDataInput>({
@@ -13,6 +14,7 @@ export const useBillableData = defineStore("billableData", () => {
     reviewData: new ReviewCalculationInput(0, 0, 0),
     coldStorageData: new ColdStorageCalculationInput(0, 0, 0),
     stagingData: new StagingCalculationInput(0, 0),
+    translateData: new TranslateCalculatorInput(0),
   });
 
   function changeReviewBillableFileSize(billableFileSize: number) {
@@ -43,6 +45,10 @@ export const useBillableData = defineStore("billableData", () => {
     data.value.stagingData.dataInGb = Number(billableFileSize);
   }
 
+  function changeTranslateBillableFileSize(billableFileSize: number) {
+    data.value.translateData.dataInGb = Number(billableFileSize);
+  }
+
   return {
     data,
     changeReviewBillableFileSize,
@@ -52,5 +58,6 @@ export const useBillableData = defineStore("billableData", () => {
     changeRepoLinkedFileSize,
     changeColdStorageBillableFileSize,
     changeStagingBillableFileSize,
+    changeTranslateBillableFileSize
   };
 });

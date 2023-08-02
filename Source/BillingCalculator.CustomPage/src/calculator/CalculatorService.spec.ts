@@ -44,6 +44,7 @@ describe('CalculatorService tests', () => {
         dataInput.repoData = new RepositoryCalculationInput(10, 1, 0, 1);
         dataInput.coldStorageData = new ColdStorageCalculationInput(10, 0, 1);
         dataInput.stagingData = new StagingCalculationInput(10, 1);
+        dataInput.translateData = {dataInGb: 1};
 
         return dataInput;
     }
@@ -54,6 +55,7 @@ describe('CalculatorService tests', () => {
             repoResult: {amount: 4.5, dataInGB: 9},
             coldStorageResult: {amount: 2, dataInGB: 10},
             stagingResult: {amount: 1.6, dataInGB: 10},
+            translateResult: {amount: 0.5, dataInGB: 1},
             peekDay: 2
         };
     }
