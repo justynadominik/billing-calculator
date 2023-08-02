@@ -1,7 +1,5 @@
 <template>
   <rwc-category category-title="The Billing Calculator">
-    <p>Count: {{ data }}</p>
-    <br>
     <span class="rwa-button-group left-aligned">
       <span class="span1"></span>
       <button class="rwa-button" @click="toggleComponent('review')">Review</button>
@@ -19,6 +17,9 @@
   <rwc-category category-title="Chart">
     <div id="chartdiv" class="chart"></div>
   </rwc-category>
+
+  <rwc-text-input-field label="Estimaded cost $" :value="total" disabled ></rwc-text-input-field>
+
   <div v-if="showRepoComponent">
     <RepositoryComponent></RepositoryComponent>
   </div>
@@ -34,7 +35,7 @@
   <div v-if="showStagingComponent">
     <StagingComponent></StagingComponent>
   </div>
-  <FooterComponent></FooterComponent>
+
 </template>
 
 <script setup lang="ts">
@@ -53,11 +54,67 @@ import { useBillableData } from "../stores/counter";
 import { storeToRefs } from "pinia";
 import { useRepositoryStore } from "../stores/repository";
 import { useReviewStore } from "../stores/review";
+import {BillingDataInput, CalculationService} from "../calculator/CalculatorService";
+import {ReviewCalculationInput} from "@/calculator/ReviewCalculator";
+import {RepositoryCalculationInput} from "@/calculator/RepositoryCalculator";
+import {ColdStorageCalculationInput} from "@/calculator/ColdStorageCalculator";
+import {StagingCalculationInput} from "@/calculator/StagingCalculator";
 
 const { data } = storeToRefs(useBillableData());
 
-const { repoBillableFileSize1, repoBillableFileSize2, repoBillableFileSize3, repoBillableFileSize4, repoBillableFileSize5 } = storeToRefs(useRepositoryStore());
-const { reviewBillableFileSize1, reviewBillableFileSize2, reviewBillableFileSize3, reviewBillableFileSize4, reviewBillableFileSize5 } = storeToRefs(useReviewStore());
+const { repoBillableFileSize1, repoBillableFileSize2, repoBillableFileSize3, repoBillableFileSize4, repoBillableFileSize5 , repoData } = storeToRefs(useRepositoryStore());
+const { reviewBillableFileSize1, reviewBillableFileSize2, reviewBillableFileSize3, reviewBillableFileSize4, reviewBillableFileSize5, reviewData} = storeToRefs(useReviewStore());
+
+const total = ref(0);
+
+watch(data.value, () => {
+  const calculationService = new CalculationService();
+  const temp = calculationService.calculate(data.value);
+  //total.value = temp.totalCost()
+})
+
+watch(reviewData.value, recalculate
+)
+
+function recalculate() {
+  const calculationService = new CalculationService();
+  const result = calculationService.calculateForMonth(
+      [
+        [{
+          reviewData: reviewData.value[0],
+          coldStorageData: new ColdStorageCalculationInput(0,0,0),
+          repoData: repoData.value[0],
+          stagingData: new StagingCalculationInput(0,0)
+        }, 1],
+        [{
+          reviewData: reviewData.value[1],
+          coldStorageData: new ColdStorageCalculationInput(0,0,0),
+          repoData: repoData.value[1],
+          stagingData: new StagingCalculationInput(0,0)
+        }, 2],
+        [{
+          reviewData: reviewData.value[2],
+          coldStorageData: new ColdStorageCalculationInput(0,0,0),
+          repoData: repoData.value[2],
+          stagingData: new StagingCalculationInput(0,0)
+        }, 3],
+        [{
+          reviewData: reviewData.value[3],
+          coldStorageData: new ColdStorageCalculationInput(0,0,0),
+          repoData: repoData.value[3],
+          stagingData: new StagingCalculationInput(0,0)
+        }, 4],
+        [{
+          reviewData: reviewData.value[4],
+          coldStorageData: new ColdStorageCalculationInput(0,0,0),
+          repoData: repoData.value[4],
+          stagingData: new StagingCalculationInput(0,0)
+        }, 5],
+      ]);
+
+  total.value = result.totalCost();
+}
+
 
 let chartConfig : ChartConfiguration;
 onMounted(() => {
@@ -70,11 +127,26 @@ watch(repoBillableFileSize3, ()=> chartConfig.updateRepo(2,repoBillableFileSize3
 watch(repoBillableFileSize4, ()=> chartConfig.updateRepo(3,repoBillableFileSize4.value));
 watch(repoBillableFileSize5, ()=> chartConfig.updateRepo(4,repoBillableFileSize5.value));
 
-watch(reviewBillableFileSize1, ()=> chartConfig.updateReview(0,reviewBillableFileSize1.value));
+watch(reviewBillableFileSize1, ()=> { chartConfig.updateReview(0,reviewBillableFileSize1.value); calculate()});
 watch(reviewBillableFileSize2, ()=> chartConfig.updateReview(1,reviewBillableFileSize2.value));
 watch(reviewBillableFileSize3, ()=> chartConfig.updateReview(2,reviewBillableFileSize3.value));
 watch(reviewBillableFileSize4, ()=> chartConfig.updateReview(3,reviewBillableFileSize4.value));
 watch(reviewBillableFileSize5, ()=> chartConfig.updateReview(4,reviewBillableFileSize5.value));
+
+
+function calculate() {
+  /*const calculationService = new CalculationService();
+
+  let repoBillable = [repoBillableFileSize1.value, repoBillableFileSize2.value, repoBillableFileSize3.value, repoBillableFileSize4.value, repoBillableFileSize5.value]
+
+  let input : [calculationInput: BillingDataInput, day: number][] = []
+  for (let i = 0; i < 5; i++) {
+    input.push(,i+1)
+  }
+
+
+  const temp = calculationService.calculateForMonth()*/
+}
 
 
 const showReviewComponent = ref(false);

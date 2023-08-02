@@ -1,5 +1,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
+import {RepositoryCalculationInput} from "../calculator/RepositoryCalculator";
+import {ReviewCalculationInput} from "../calculator/ReviewCalculator";
 
 export const useReviewStore = defineStore("review", () => {
     const reviewBillableFileSize1 = ref(0);
@@ -7,6 +9,36 @@ export const useReviewStore = defineStore("review", () => {
     const reviewBillableFileSize3 = ref(0);
     const reviewBillableFileSize4 = ref(0);
     const reviewBillableFileSize5 = ref(0);
+
+    const reviewData = ref<ReviewCalculationInput[]>(
+        [
+            {
+                dataInGb: 0,
+                textOnlyDocumentsCount: 0,
+                reviewPeek: 0,
+            },
+            {
+                dataInGb: 0,
+                textOnlyDocumentsCount: 0,
+                reviewPeek: 0,
+            },
+            {
+                dataInGb: 0,
+                textOnlyDocumentsCount: 0,
+                reviewPeek: 0,
+            },
+            {
+                dataInGb: 0,
+                textOnlyDocumentsCount: 0,
+                reviewPeek: 0,
+            },
+            {
+                dataInGb: 0,
+                textOnlyDocumentsCount: 0,
+                reviewPeek: 0,
+            },
+        ]);
+
 
     function changeBillableFileSize1(newValue: string) {
         reviewBillableFileSize1.value = parseInt(newValue);
@@ -29,5 +61,5 @@ export const useReviewStore = defineStore("review", () => {
     }
 
     return { reviewBillableFileSize1: reviewBillableFileSize1, reviewBillableFileSize2: reviewBillableFileSize2, reviewBillableFileSize3: reviewBillableFileSize3, reviewBillableFileSize4: reviewBillableFileSize4, reviewBillableFileSize5: reviewBillableFileSize5,
-        changeBillableFileSize1, changeBillableFileSize2, changeBillableFileSize3, changeBillableFileSize4, changeBillableFileSize5 };
+        changeBillableFileSize1, changeBillableFileSize2, changeBillableFileSize3, changeBillableFileSize4, changeBillableFileSize5, reviewData : reviewData };
   });
