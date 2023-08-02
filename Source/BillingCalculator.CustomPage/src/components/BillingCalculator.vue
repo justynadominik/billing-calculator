@@ -55,11 +55,11 @@ import { storeToRefs } from "pinia";
 import { useRepositoryStore } from "../stores/repository";
 import { useReviewStore } from "../stores/review";
 import {BillingDataInput, CalculationService} from "../calculator/CalculatorService";
-import {ReviewCalculationInput} from "@/calculator/ReviewCalculator";
-import {RepositoryCalculationInput} from "@/calculator/RepositoryCalculator";
-import {ColdStorageCalculationInput} from "@/calculator/ColdStorageCalculator";
-import {StagingCalculationInput} from "@/calculator/StagingCalculator";
-import {TranslateCalculatorInput} from "@/calculator/TranslateCalculator";
+import {ReviewCalculationInput} from "../calculator/ReviewCalculator";
+import {RepositoryCalculationInput} from "../calculator/RepositoryCalculator";
+import {ColdStorageCalculationInput} from "../calculator/ColdStorageCalculator";
+import {StagingCalculationInput} from "../calculator/StagingCalculator";
+import {TranslateCalculatorInput} from "../calculator/TranslateCalculator";
 
 const { data } = storeToRefs(useBillableData());
 
@@ -161,7 +161,6 @@ const showRepoComponent = ref(false);
 const showColdStorageComponent = ref(false);
 const showTranslateComponent = ref(false);
 const showStagingComponent = ref(false)
-
 const isActiveReview = ref(true);
 const isActiveRepo = ref(true);
 const isActiveColdStorage = ref(true);

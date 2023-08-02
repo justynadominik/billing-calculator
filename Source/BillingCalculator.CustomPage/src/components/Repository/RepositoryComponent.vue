@@ -9,7 +9,7 @@
             <input label="Billable File Size" edit-mode v-model="inputBillableFileSizeRepo">
             </td>
             <td>
-              <rwc-category category-title="Bilable File Size Breakdown" collapsible colapsed reduced-spacing>
+              <rwc-category category-title="Bilable File Size Breakdown" style="font-weight: 700;" collapsible colapsed reduced-spacing>
             <table>
                 <tr>
                   <td>
@@ -77,7 +77,7 @@
             <input test-label="Linked File Size" edit-mode v-model="inputTextLinkedFileSizeRepo">
             </td>
             <td>
-              <rwc-category category-title="Linked File Size Breakdown" collapsible collapced reduced-spacing>
+              <rwc-category category-title="Linked File Size Breakdown" style="font-weight: 700;" collapsible collapced reduced-spacing>
             <table>
                 <tr>
                   <td>
@@ -145,7 +145,7 @@
             <input label="Text Only Documents" edit-mode v-model="inputTextOnlyDocumentsRepo">
             </td>
             <td>
-              <rwc-category category-title="Text Only Documents Breakdown" collapsible collapced reduced-spacing>
+              <rwc-category category-title="Text Only Documents Breakdown" style="font-weight: 700;" collapsible collapced reduced-spacing>
             <table>
                 <tr>
                   <td>
