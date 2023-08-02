@@ -2,6 +2,7 @@
     <rwc-category category-title="Staging" collapsible>
         <span>
             <span class = "span1"></span>
+            <static-text class="static-text3">Billable File Size</static-text>
             <input label="Billable File Size" edit-mode v-model="inputBillableFileSizeStaging">
         </span>
     </rwc-category>
