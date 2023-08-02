@@ -59,6 +59,7 @@ import {ReviewCalculationInput} from "@/calculator/ReviewCalculator";
 import {RepositoryCalculationInput} from "@/calculator/RepositoryCalculator";
 import {ColdStorageCalculationInput} from "@/calculator/ColdStorageCalculator";
 import {StagingCalculationInput} from "@/calculator/StagingCalculator";
+import {TranslateCalculatorInput} from "@/calculator/TranslateCalculator";
 
 const { data } = storeToRefs(useBillableData());
 
@@ -84,31 +85,37 @@ function recalculate() {
           reviewData: reviewData.value[0],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[0],
-          stagingData: new StagingCalculationInput(0,0)
+          stagingData: new StagingCalculationInput(0,0),
+          translateData : new TranslateCalculatorInput(0)
         }, 1],
         [{
           reviewData: reviewData.value[1],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[1],
-          stagingData: new StagingCalculationInput(0,0)
+          stagingData: new StagingCalculationInput(0,0),
+          translateData : new TranslateCalculatorInput(0)
         }, 2],
         [{
           reviewData: reviewData.value[2],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[2],
-          stagingData: new StagingCalculationInput(0,0)
+          stagingData: new StagingCalculationInput(0,0),
+          translateData : new TranslateCalculatorInput(0)
         }, 3],
         [{
           reviewData: reviewData.value[3],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[3],
-          stagingData: new StagingCalculationInput(0,0)
+          stagingData: new StagingCalculationInput(0,0),
+          translateData : new TranslateCalculatorInput(0)
+
         }, 4],
         [{
           reviewData: reviewData.value[4],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[4],
-          stagingData: new StagingCalculationInput(0,0)
+          stagingData: new StagingCalculationInput(0,0),
+          translateData : new TranslateCalculatorInput(0)
         }, 5],
       ]);
 
