@@ -27,11 +27,11 @@
 
   <rwc-text-input-field label="Estimaded cost $" :value="total" disabled ></rwc-text-input-field>
 
-  <div v-if="showRepoComponent">
-    <RepositoryComponent></RepositoryComponent>
-  </div>
   <div v-if="showReviewComponent">
     <ReviewComponent></ReviewComponent>
+  </div>
+  <div v-if="showRepoComponent">
+    <RepositoryComponent></RepositoryComponent>
   </div>
   <div v-if="showColdStorageComponent">
     <ColdStorageComponent></ColdStorageComponent>
