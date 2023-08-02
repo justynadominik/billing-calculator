@@ -2,15 +2,15 @@
   <rwc-category category-title="The Billing Calculator">
     <span class="rwa-button-group left-aligned">
       <span class="span1"></span>
-      <button class="rwa-button" @click="toggleComponent('review')">Review</button>
+      <button :class="[ isActiveReview ? 'rwa-button' : 'rwa-button secondary' ]" @click="toggleComponent('review')">Review</button>
       <span class="span1"></span>
-      <button class="rwa-button" @click="toggleComponent('repository')">Repository</button>
+      <button :class="[ isActiveRepo ? 'rwa-button' : 'rwa-button secondary' ]" @click="toggleComponent('repository')">Repository</button>
       <span class="span1"></span>
-      <button class="rwa-button" @click="toggleComponent('coldStorage')">Cold Storage</button>
+      <button :class="[ isActiveColdStorage ? 'rwa-button' : 'rwa-button secondary' ]" @click="toggleComponent('coldStorage')">Cold Storage</button>
       <span class="span1"></span>
-      <button class="rwa-button" @click="toggleComponent('translate')">Translate</button>
+      <button :class="[ isActiveTranslate ? 'rwa-button' : 'rwa-button secondary' ]" @click="toggleComponent('translate')">Translate</button>
       <span class="span1"></span>
-      <button class="rwa-button" @click="toggleComponent('staging')">Staging</button>
+      <button :class="[ isActiveStaging ? 'rwa-button' : 'rwa-button secondary' ]" @click="toggleComponent('staging')">Staging</button>
       <span class="span1"></span>
     </span>
   </rwc-category>
@@ -162,21 +162,32 @@ const showColdStorageComponent = ref(false);
 const showTranslateComponent = ref(false);
 const showStagingComponent = ref(false)
 
+const isActiveReview = ref(true);
+const isActiveRepo = ref(true);
+const isActiveColdStorage = ref(true);
+const isActiveTranslate = ref(true);
+const isActiveStaging = ref(true);
+
 const toggleComponent = (component: string) => {
   if (component === 'review') {
     showReviewComponent.value = !showReviewComponent.value;
+    isActiveReview.value = !isActiveReview.value;
   }
   if (component === 'repository') {
     showRepoComponent.value = !showRepoComponent.value;
+    isActiveRepo.value = !isActiveRepo.value;
   }
   if (component === 'coldStorage') {
     showColdStorageComponent.value = !showColdStorageComponent.value;
+    isActiveColdStorage.value = !isActiveColdStorage.value;
   }
   if (component === 'translate') {
     showTranslateComponent.value = !showTranslateComponent.value;
+    isActiveTranslate.value = !isActiveTranslate.value;
   }
   if (component === 'staging') {
     showStagingComponent.value = !showStagingComponent.value;
+    isActiveStaging.value = !isActiveStaging.value;
   }
 }
 </script>

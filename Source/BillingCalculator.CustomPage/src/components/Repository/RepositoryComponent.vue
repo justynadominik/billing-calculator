@@ -260,7 +260,7 @@ watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
 	margin-left: 80px;
     margin-right: 25px;
     font-family: "Roboto", arial, helvetica, sans-serif;
-	font-weight: 700;
+	font-weight: 100;
 	float: left;
     font-size: 13.5px;
     opacity: 0.9;
@@ -275,7 +275,7 @@ watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
 	margin-left: 80px;
     margin-right: 25px;
     font-family: "Roboto", arial, helvetica, sans-serif;
-	font-weight: 700;
+	font-weight: 100;
 	float: left;
     font-size: 13.5px;
     opacity: 0.9;
@@ -290,7 +290,7 @@ watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
 	margin-left: 25px;
     margin-right: 25px;
     font-family: "Roboto", arial, helvetica, sans-serif;
-	font-weight: 700;
+	font-weight: 100;
 	float: left;
     font-size: 13.5px;
     opacity: 0.9;
@@ -312,14 +312,6 @@ watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
 	text-align: center;
 	vertical-align: middle;
 	line-height: 3rem;
-}
-
-.div1{
-    white-space: "nowrap";
-    margin-top: 20px;
-    margin-bottom: 0px;
-    border-top: 1px outset gray;
-    text-align: center;
 }
 
 .slider-style{
