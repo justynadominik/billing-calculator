@@ -83,6 +83,10 @@ export class CalculationService {
 
     var translateResult = translateCalculator.calculate(dataInput.translateData);
     var reviewResult = reviewCalculator.calculate(dataInput.reviewData);
+    dataInput.repoData.reviewPeek = reviewResult.amount;
+    dataInput.stagingData.reviewPeek = reviewResult.amount;
+    dataInput.coldStorageData.reviewPeek = reviewResult.amount;
+
     var repoResult = repoCalculator.calculate(dataInput.repoData);
     var coldStorageResult = coldStorageCalculator.calculate(
       dataInput.coldStorageData
@@ -100,25 +104,35 @@ export class CalculationService {
   }
 
   getDefaultReviewTiers(): RateConfiguration {
-    return new RateConfiguration([new Tier(0, 100, 1.2), new Tier(100, 200, 1.0), new Tier(200, null, 0.8)]);
+    return new RateConfiguration([
+      new Tier(0, 3, 10),
+      new Tier(3, 5, 8.1),
+      new Tier(5, 20, 6),
+      new Tier(20, 35, 5.5),
+      new Tier(35, 77, 5),
+      new Tier(100, null, 3)
+    ]);
   }
 
   getDefaultRepoTiers(): RateConfiguration {
     return new RateConfiguration([
-      new Tier(0, 100, 0.6),
-      new Tier(100, 200, 0.5),
-      new Tier(200, 300, 0.3),
-      new Tier(300, 400, 0.2),
-      new Tier(400, null, 0.1),
+      new Tier(0, 3, 3.3),
+      new Tier(3, 5, 2.7),
+      new Tier(5, 20, 2),
+      new Tier(20, 35, 1.7),
+      new Tier(35, 77, 1.6),
+      new Tier(100, null, 1)
     ]);
   }
 
   getDefaultColdStorageTiers(): RateConfiguration {
     return new RateConfiguration([
-      new Tier(0, 100, 0.3),
-      new Tier(100, 200, 0.2),
-      new Tier(200, 300, 0.1),
-      new Tier(300, null, 0.05),
+      new Tier(0, 3, 2.5),
+      new Tier(3, 5, 2),
+      new Tier(5, 20, 1.5),
+      new Tier(20, 35, 1.3),
+      new Tier(35, 77, 1.2),
+      new Tier(100, null, 0.75)
     ]);
   }
 
