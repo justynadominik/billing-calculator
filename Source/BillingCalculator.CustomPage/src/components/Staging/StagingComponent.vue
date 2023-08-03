@@ -46,7 +46,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text-category-file-size">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeStaging" :step="stepRef" length="35rem" orientation="horizontal" :value="stagingData[3].dataInGb" @change="stagingData[0].dataInGb = $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeStaging" :step="stepRef" length="35rem" orientation="horizontal" :value="stagingData[3].dataInGb" @change="stagingData[3].dataInGb = $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
@@ -57,7 +57,7 @@
                 <tr>
                   <td>
                     <static-text class="static-text-category-file-size">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeStaging" :step="stepRef" length="35rem" orientation="horizontal" :value="stagingData[4].dataInGb" @change="stagingData[0].dataInGb = $event.target.value">
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeStaging" :step="stepRef" length="35rem" orientation="horizontal" :value="stagingData[4].dataInGb" @change="stagingData[4].dataInGb = $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>

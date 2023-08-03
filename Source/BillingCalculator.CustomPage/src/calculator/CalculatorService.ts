@@ -155,10 +155,12 @@ export class CalculationService {
     });
 
     var peek = this.getReviewPeekData(result);
+    var stagingPeek = this.getStagingPeekData(result);
 
     var input = data.find((item) => item[1] == peek[1])![0];
     let finalCalculation = this.calculate(input);
     finalCalculation.peekDay = peek[1];
+    finalCalculation.stagingResult = stagingPeek[0].stagingResult;
 
     return finalCalculation;
   }
@@ -173,6 +175,23 @@ export class CalculationService {
       let current = data[i];
       if (current[0].reviewResult.dataInGB > max) {
         max = current[0].reviewResult.dataInGB;
+        item = current;
+        index = i;
+      }
+    }
+    return item;
+  }
+
+  getStagingPeekData(
+    data: [calculationInput: BillingCalculationResult, day: number][]
+  ): [calculationInput: BillingCalculationResult, day: number] {
+    let max = 0;
+    let item = data[0];
+    let index = 0;
+    for (let i = 0; i < data.length; i++) {
+      let current = data[i];
+      if (current[0].stagingResult.dataInGB > max) {
+        max = current[0].stagingResult.dataInGB;
         item = current;
         index = i;
       }
