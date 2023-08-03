@@ -8,9 +8,13 @@ export class ChartConfiguration {
     reviewSeries: am5xy.LineSeries;
     repoSeries: am5xy.LineSeries;
     linkReviewSeries: am5xy.LineSeries;
+    coldSeries: am5xy.LineSeries;
+    stageSeries: am5xy.LineSeries;
     reviewData: Point[] = [];
     repoData: Point[] = [];
     linkReviewData: Point[] = [];
+    coldData: Point[] = [];
+    stageData: Point[] = [];
     constructor() {
         const root = am5.Root.new("chartdiv");
         let chart = root.container.children.push(
@@ -87,6 +91,34 @@ export class ChartConfiguration {
             })
         );
 
+        this.coldSeries = chart.series.push(
+            am5xy.LineSeries.new(root, {
+                name: "Cold storage",
+                xAxis: xAxis,
+                yAxis: yAxis,
+                valueYField: "value",
+                valueXField: "date",
+                stroke: am5.color("#8bd3c7"),
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: "{valueY}"
+                })
+            })
+        );
+
+        this.stageSeries = chart.series.push(
+            am5xy.LineSeries.new(root, {
+                name: "Staging",
+                xAxis: xAxis,
+                yAxis: yAxis,
+                valueYField: "value",
+                valueXField: "date",
+                stroke: am5.color("#beb9db"),
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: "{valueY}"
+                })
+            })
+        );
+
         var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
         cursor.lineY.set("visible", false);
 
@@ -102,6 +134,16 @@ export class ChartConfiguration {
                 bullet: false
             });
             this.linkReviewData.push({
+                date: new Date(2023, 8, i * 7 + 1).getTime(),
+                value: 0,
+                bullet: false
+            });
+            this.coldData.push({
+                date: new Date(2023, 8, i * 7 + 1).getTime(),
+                value: 0,
+                bullet: false
+            });
+            this.stageData.push({
                 date: new Date(2023, 8, i * 7 + 1).getTime(),
                 value: 0,
                 bullet: false
@@ -147,21 +189,9 @@ export class ChartConfiguration {
         this.reviewSeries.data.setAll(this.reviewData);
         this.repoSeries.data.setAll(this.repoData);
         this.linkReviewSeries.data.setAll(this.linkReviewData);
+        this.coldSeries.data.setAll(this.coldData);
+        this.stageSeries.data.setAll(this.stageData);
     }
-    recalculateMax() {
-        let maxValue = this.reviewData[0].value;
-        let maxIndex = 0;
-        this.reviewData.forEach((element, i) => {
-            element.bullet = false;
-            if (maxValue < element.value) {
-                maxValue = element.value;
-                maxIndex = i;
-            }
-        });
-        this.reviewData[maxIndex].bullet = true;
-        this.reviewSeries.data.setAll(this.reviewData);
-    }
-
 
     updateReview(newData: ReviewCalculationInput[], pickIndex: number) {
         newData.forEach((element, i) =>{
@@ -179,6 +209,20 @@ export class ChartConfiguration {
         })
         this.linkReviewSeries.data.setAll(this.linkReviewData);
         this.repoSeries.data.setAll(this.repoData);
+    }
+
+    updateCold(newData: RepositoryCalculationInput[]) {
+        newData.forEach((element, i) =>{
+            this.coldData[i].value = element.totalBilliableFileSizeInGB;
+        })
+        this.coldSeries.data.setAll(this.coldData);
+    }
+
+    updateStage(newData: RepositoryCalculationInput[]) {
+        newData.forEach((element, i) =>{
+            this.stageData[i].value = element.totalBilliableFileSizeInGB;
+        })
+        this.stageSeries.data.setAll(this.stageData);
     }
 }
 export class Point {
