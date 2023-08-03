@@ -3,66 +3,65 @@
         <span>
           <table>
             <tr>
-              <td style="width: 25rem">
-            <span class = "span1"></span>
-            <static-text class="static-text3">Billable File Size</static-text>
-            <input label="Billable File Size" edit-mode v-model="inputBillableFileSizeRepo">
+              <td style="width: 25rem;">
+            <static-text class="input-label">Billable File Size</static-text>
+            <input class="input1" label="Billable File Size" edit-mode v-model="inputBillableFileSizeRepo">
             </td>
-            <td>
-              <rwc-category category-title="Bilable File Size Breakdown" style="font-weight: 700;" collapsible collapsed reduced-spacing>
+            <td style="width: 75rem;">
+              <rwc-category class="breakdown-category" category-title="Bilable File Size Breakdown" style="font-weight: 700;" collapsible collapsed reduced-spacing>
             <table>
                 <tr>
                   <td>
-                    <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="40rem" orientation="horizontal"  :value="repoData[0].totalBilliableFileSizeInGB" @change="repoData[0].totalBilliableFileSizeInGB =  $event.target.value">
+                    <static-text class="static-text-category-file-size">File Size</static-text>
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="35rem" orientation="horizontal"  :value="repoData[0].totalBilliableFileSizeInGB" @change="repoData[0].totalBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="repoData[0].totalBilliableFileSizeInGB">
+                    <rwc-number-input-field class="nif-units" label="GB" :value="repoData[0].totalBilliableFileSizeInGB">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="40rem" orientation="horizontal" :value="repoData[1].totalBilliableFileSizeInGB" @change="repoData[1].totalBilliableFileSizeInGB =  $event.target.value">
+                    <static-text class="static-text-category-file-size">File Size</static-text>
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="35rem" orientation="horizontal" :value="repoData[1].totalBilliableFileSizeInGB" @change="repoData[1].totalBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="repoData[1].totalBilliableFileSizeInGB">
+                    <rwc-number-input-field class="nif-units" label="GB" :value="repoData[1].totalBilliableFileSizeInGB">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="40rem" orientation="horizontal" :value="repoData[2].totalBilliableFileSizeInGB" @change="repoData[2].totalBilliableFileSizeInGB =  $event.target.value">
+                    <static-text class="static-text-category-file-size">File Size</static-text>
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="35rem" orientation="horizontal" :value="repoData[2].totalBilliableFileSizeInGB" @change="repoData[2].totalBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="repoData[2].totalBilliableFileSizeInGB">
+                    <rwc-number-input-field class="nif-units" label="GB" :value="repoData[2].totalBilliableFileSizeInGB">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="40rem" orientation="horizontal" :value="repoData[3].totalBilliableFileSizeInGB" @change="repoData[3].totalBilliableFileSizeInGB =  $event.target.value">
+                    <static-text class="static-text-category-file-size">File Size</static-text>
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="35rem" orientation="horizontal" :value="repoData[3].totalBilliableFileSizeInGB" @change="repoData[3].totalBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="repoData[3].totalBilliableFileSizeInGB">
+                    <rwc-number-input-field class="nif-units" label="GB" :value="repoData[3].totalBilliableFileSizeInGB">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="40rem" orientation="horizontal" :value="repoData[4].totalBilliableFileSizeInGB" @change="repoData[4].totalBilliableFileSizeInGB =  $event.target.value">
+                    <static-text class="static-text-category-file-size">File Size</static-text>
+                    <rwc-slider class="slider-style" :max="inputBillableFileSizeRepo" :step="stepRef" length="35rem" orientation="horizontal" :value="repoData[4].totalBilliableFileSizeInGB" @change="repoData[4].totalBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="repoData[4].totalBilliableFileSizeInGB">
+                    <rwc-number-input-field class="nif-units" label="GB" :value="repoData[4].totalBilliableFileSizeInGB">
                     </rwc-number-input-field>
                   </td>
                 </tr>
@@ -71,66 +70,65 @@
           </td>
           </tr>
           <tr>
-            <td style="width: 25rem">
-            <span class = "span1"></span>
-            <static-text class="static-text3">Linked File Size</static-text>
-            <input test-label="Linked File Size" edit-mode v-model="inputTextLinkedFileSizeRepo">
+            <td style="width: 25rem;">
+            <static-text class="input-label">Linked File Size</static-text>
+            <input class="input1" test-label="Linked File Size" edit-mode v-model="inputTextLinkedFileSizeRepo">
             </td>
-            <td>
-              <rwc-category category-title="Linked File Size Breakdown" style="font-weight: 700;" collapsible collapsed reduced-spacing>
+            <td style="width: 75rem;">
+              <rwc-category class="breakdown-category" category-title="Linked File Size Breakdown" style="font-weight: 700;" collapsible collapsed reduced-spacing>
             <table>
                 <tr>
                   <td>
-                    <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="40rem" orientation="horizontal" :value="repoData[0].linkedBilliableFileSizeInGB" @change="repoData[0].linkedBilliableFileSizeInGB =  $event.target.value">
+                    <static-text class="static-text-category-file-size">File Size</static-text>
+                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="35rem" orientation="horizontal" :value="repoData[0].linkedBilliableFileSizeInGB" @change="repoData[0].linkedBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="repoData[0].linkedBilliableFileSizeInGB">
+                    <rwc-number-input-field class="nif-units" label="GB" :value="repoData[0].linkedBilliableFileSizeInGB">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="40rem" orientation="horizontal" :value="repoData[1].linkedBilliableFileSizeInGB" @change="repoData[1].linkedBilliableFileSizeInGB =  $event.target.value">
+                    <static-text class="static-text-category-file-size">File Size</static-text>
+                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="35rem" orientation="horizontal" :value="repoData[1].linkedBilliableFileSizeInGB" @change="repoData[1].linkedBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="repoData[1].linkedBilliableFileSizeInGB">
+                    <rwc-number-input-field class="nif-units" label="GB" :value="repoData[1].linkedBilliableFileSizeInGB">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="40rem" orientation="horizontal" :value="repoData[2].linkedBilliableFileSizeInGB" @change="repoData[2].linkedBilliableFileSizeInGB =  $event.target.value">
+                    <static-text class="static-text-category-file-size">File Size</static-text>
+                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="35rem" orientation="horizontal" :value="repoData[2].linkedBilliableFileSizeInGB" @change="repoData[2].linkedBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="repoData[2].linkedBilliableFileSizeInGB">
+                    <rwc-number-input-field class="nif-units" label="GB" :value="repoData[2].linkedBilliableFileSizeInGB">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="40rem" orientation="horizontal" :value="repoData[3].linkedBilliableFileSizeInGB" @change="repoData[3].linkedBilliableFileSizeInGB =  $event.target.value">
+                    <static-text class="static-text-category-file-size">File Size</static-text>
+                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="35rem" orientation="horizontal" :value="repoData[3].linkedBilliableFileSizeInGB" @change="repoData[3].linkedBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="repoData[3].linkedBilliableFileSizeInGB">
+                    <rwc-number-input-field class="nif-units" label="GB" :value="repoData[3].linkedBilliableFileSizeInGB">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text1">File Size</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="40rem" orientation="horizontal" :value="repoData[4].linkedBilliableFileSizeInGB" @change="repoData[4].linkedBilliableFileSizeInGB =  $event.target.value">
+                    <static-text class="static-text-category-file-size">File Size</static-text>
+                    <rwc-slider class="slider-style" :max="inputTextLinkedFileSizeRepo" :step="stepRefLink" length="35rem" orientation="horizontal" :value="repoData[4].linkedBilliableFileSizeInGB" @change="repoData[4].linkedBilliableFileSizeInGB =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="GB" :value="repoData[4].linkedBilliableFileSizeInGB">
+                    <rwc-number-input-field class="nif-units" label="GB" :value="repoData[4].linkedBilliableFileSizeInGB">
                     </rwc-number-input-field>
                   </td>
                 </tr>
@@ -139,66 +137,65 @@
             </td>
           </tr>
           <tr>
-            <td style="width: 25rem">
-            <span class = "span1"></span>
-            <static-text class="static-text3">Text Only Documents</static-text>
-            <input label="Text Only Documents" edit-mode v-model="inputTextOnlyDocumentsRepo">
+            <td style="width: 25rem;">
+            <static-text class="input-label">Text Only Documents</static-text>
+            <input class="input1" label="Text Only Documents" edit-mode v-model="inputTextOnlyDocumentsRepo">
             </td>
-            <td>
-              <rwc-category category-title="Text Only Documents Breakdown" style="font-weight: 700;" collapsible collapsed reduced-spacing>
+            <td style="width: 75rem;">
+              <rwc-category  class="breakdown-category" category-title="Text Only Documents Breakdown" style="font-weight: 700;" collapsible collapsed reduced-spacing>
             <table>
                 <tr>
                   <td>
-                    <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="40rem" orientation="horizontal" :value="repoData[0].textOnlyDocumentsCount" @change="repoData[0].textOnlyDocumentsCount =  $event.target.value">
+                    <static-text class="static-text-category-doc-count">Documents Count</static-text>
+                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="35rem" orientation="horizontal" :value="repoData[0].textOnlyDocumentsCount" @change="repoData[0].textOnlyDocumentsCount =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="COUNT" :value="repoData[0].textOnlyDocumentsCount">
+                    <rwc-number-input-field class="nif-units" label="COUNT" :value="repoData[0].textOnlyDocumentsCount">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="40rem" orientation="horizontal" :value="repoData[1].textOnlyDocumentsCount" @change="repoData[1].textOnlyDocumentsCount =  $event.target.value">
+                    <static-text class="static-text-category-doc-count">Documents Count</static-text>
+                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="35rem" orientation="horizontal" :value="repoData[1].textOnlyDocumentsCount" @change="repoData[1].textOnlyDocumentsCount =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="COUNT" :value="repoData[1].textOnlyDocumentsCount">
+                    <rwc-number-input-field class="nif-units" label="COUNT" :value="repoData[1].textOnlyDocumentsCount">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="40rem" orientation="horizontal" :value="repoData[2].textOnlyDocumentsCount" @change="repoData[2].textOnlyDocumentsCount =  $event.target.value">
+                    <static-text class="static-text-category-doc-count">Documents Count</static-text>
+                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="35rem" orientation="horizontal" :value="repoData[2].textOnlyDocumentsCount" @change="repoData[2].textOnlyDocumentsCount =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="COUNT" :value="repoData[2].textOnlyDocumentsCount">
+                    <rwc-number-input-field class="nif-units" label="COUNT" :value="repoData[2].textOnlyDocumentsCount">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="40rem" orientation="horizontal" :value="repoData[3].textOnlyDocumentsCount" @change="repoData[3].textOnlyDocumentsCount =  $event.target.value">
+                    <static-text class="static-text-category-doc-count">Documents Count</static-text>
+                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="35rem" orientation="horizontal" :value="repoData[3].textOnlyDocumentsCount" @change="repoData[3].textOnlyDocumentsCount =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="COUNT" :value="repoData[3].textOnlyDocumentsCount">
+                    <rwc-number-input-field class="nif-units" label="COUNT" :value="repoData[3].textOnlyDocumentsCount">
                     </rwc-number-input-field>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <static-text class="static-text2">Documents Count</static-text>
-                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="40rem" orientation="horizontal" :value="repoData[4].textOnlyDocumentsCount" @change="repoData[4].textOnlyDocumentsCount =  $event.target.value">
+                    <static-text class="static-text-category-doc-count">Documents Count</static-text>
+                    <rwc-slider class="slider-style" :max="inputTextOnlyDocumentsRepo" :step="stepRefText" length="35rem" orientation="horizontal" :value="repoData[4].textOnlyDocumentsCount" @change="repoData[4].textOnlyDocumentsCount =  $event.target.value">
                     </rwc-slider>
                   </td>
                   <td>
-                    <rwc-number-input-field class="nif1" label="COUNT" :value="repoData[4].textOnlyDocumentsCount">
+                    <rwc-number-input-field class="nif-units" label="COUNT" :value="repoData[4].textOnlyDocumentsCount">
                     </rwc-number-input-field>
                   </td>
                 </tr>
@@ -216,6 +213,7 @@ import { storeToRefs } from "pinia";
 import { useBillableData } from "../../stores/counter";
 import { ref, watch } from "vue";
 import { useRepositoryStore } from "../../stores/repository";
+import "@/components/components-styles.scss";
 
 const { repoData } = storeToRefs(useRepositoryStore());
 const { changeRepoBillableFileSize, changeRepoLinkedFileSize, changeRepoTextOnlyDocument } = useBillableData();
@@ -246,86 +244,4 @@ watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
 </script>
 
 <style lang="scss">
-.span1{
-    background: inherit;
-    width: 3rem;
-    display: inline-block;
-    height: 1.5rem;
-    padding: 0;
-    vertical-align: middle;
-}
-
-.static-text{
-    height: 3rem;
-	margin-top: 10px;
-	margin-left: 80px;
-    margin-right: 25px;
-    font-family: "Roboto", arial, helvetica, sans-serif;
-	font-weight: 100;
-	float: left;
-    font-size: 13.5px;
-    opacity: 0.9;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 3rem;
-}
-
-.static-text1{
-    height: 3rem;
-	margin-top: 10px;
-	margin-left: 80px;
-    margin-right: 25px;
-    font-family: "Roboto", arial, helvetica, sans-serif;
-	font-weight: 100;
-	float: left;
-    font-size: 13.5px;
-    opacity: 0.9;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 3rem;
-}
-
-.static-text2{
-    height: 3rem;
-	margin-top: 10px;
-	margin-left: 25px;
-    margin-right: 25px;
-    font-family: "Roboto", arial, helvetica, sans-serif;
-	font-weight: 100;
-	float: left;
-    font-size: 13.5px;
-    opacity: 0.9;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 3rem;
-}
-
-.static-text3{
-    height: 3rem;
-	margin-top: 0px;
-	margin-left: 5px;
-    margin-right: 25px;
-    font-family: "Roboto", arial, helvetica, sans-serif;
-	font-weight: 700;
-	float: left;
-    font-size: 14px;
-    opacity: 0.9;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 3rem;
-}
-
-.slider-style{
-    margin-right: 5px;
-    padding-left: 5px;
-    padding-top: 0px;
-    padding-bottom: 10px;
-}
-
-.nif1{
-    margin-left: 40px;
-    padding-right: 0px;
-    margin-right: -3px;
-    border-spacing: 0px;
-}
 </style>

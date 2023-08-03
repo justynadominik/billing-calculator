@@ -1,13 +1,13 @@
 <template>
     <rwc-category category-title="Translate" collapsible>
-        <span class = "span1"></span>
-        <static-text class="static-text3">Billable Units</static-text>
-        <input label="Billable Units" edit-mode v-model="inputTranslate">
+        <static-text class="input-label" >Billable Units</static-text>
+        <input class="input1" label="Billable Units" style="margin-left: 0rem; margin-bottom: 1rem;" edit-mode v-model="inputTranslate">
     </rwc-category>
 </template>
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
+import "@/components/components-styles.scss";
 
 const inputTranslate = ref(0);
 

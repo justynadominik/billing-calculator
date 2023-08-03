@@ -1,7 +1,7 @@
 <template>
     <div class = "cost">
         <rwc-text-input-field label="Estimaded cost $" :value="total" disabled ></rwc-text-input-field>
-        <span class = "span1"></span>
+        <span class = "span"></span>
     </div>
     <div>
         <span class="rwa-button-group left-aligned">
@@ -16,6 +16,7 @@ import { CalculationService, BillingDataInput } from "../../calculator/Calculato
 import { storeToRefs } from "pinia";
 import { useBillableData } from "../../stores/counter";
 import {ref, watch} from "vue";
+import "@/components/components-styles.scss";
 
 const total = ref(0);
 const { data } = storeToRefs(useBillableData());
@@ -31,14 +32,5 @@ watch(data, () => {
 <style lang="scss">
 .cost{
     padding-top:20px
-}
-.span1{
-    background: inherit;
-    width: 3rem;
-    display: inline-block;
-    height: 1.5rem;
-    padding-bottom: 20px;
-    vertical-align: middle;
-    display: inline-block;
 }
 </style>

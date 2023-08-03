@@ -1,0 +1,121 @@
+.span{
+    background: inherit;
+    width: 3rem;
+    display: inline-block;
+    height: 1.5rem;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.static-text{
+    height: 3rem;
+	margin-top: 10px;
+	margin-left: 80px;
+    margin-right: 25px;
+    font-family: "Roboto", arial, helvetica, sans-serif;
+	font-weight: 100;
+	float: left;
+    font-size: 13.5px;
+    opacity: 0.9;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 3rem;
+}
+
+.breakdown-category{
+    margin-top: -1.5rem;
+    margin-bottom: -1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .static-text-category-file-size{
+    height: 3rem;
+      margin-top: 0px;
+      margin-left: 6.5rem;
+    margin-right: 1rem;
+    font-family: "Roboto", arial, helvetica, sans-serif;
+      font-weight: 400;
+      float: left;
+    font-size: 13.5px;
+    opacity: 0.9;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 3rem;
+  }
+
+  .static-text-category-doc-count{
+    height: 3rem;
+      margin-top: 0px;
+      margin-left: 5rem;
+    margin-right: 1rem;
+    font-family: "Roboto", arial, helvetica, sans-serif;
+      font-weight: 400;
+      float: left;
+    font-size: 13.5px;
+    opacity: 0.9;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 3rem;
+  }
+
+  .input-label{
+    height: 0.25rem;
+    width: 9rem;
+      margin-top: 0rem;
+      margin-left: 3rem;
+    margin-right: 1rem;
+      margin-bottom: 0rem;
+    font-family: "Roboto", arial, helvetica, sans-serif;
+      font-weight: 700;
+      float: left;
+    font-size: 14px;
+    opacity: 0.9;
+      text-align: right;
+      vertical-align: middle;
+      line-height: 3rem;
+    border-color: #3d454e;
+    border-radius: 5px;
+  }
+
+  .input1{
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    margin-left: 13rem;
+    word-break:normal;
+    word-wrap:break-word;
+    overflow-wrap:break-word;
+    font-family:Roboto,arial,helvetica,sans-serif;
+    font-style:normal;
+    font-weight:400;
+    font-size:14px;
+    line-height:18px;
+    color:#3d454e;
+    overflow:hidden;
+    text-align:left;
+    border-color: #acbfd6;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  .input1:focus{
+    outline: #acbfd6;
+    border-color: #acbfd6;
+  }
+
+  .slider-style{
+      margin-right: 0rem;
+      margin-left: 15rem;
+  }
+
+  .nif-label{
+      margin: 0rem;
+      margin-left: -7rem;
+      padding: 0rem;
+  }
+
+  .nif-units{
+    margin: 0rem;
+    margin-left: -7rem;
+    padding: 0rem;
+}

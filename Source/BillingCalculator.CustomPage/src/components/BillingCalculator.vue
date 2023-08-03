@@ -1,17 +1,17 @@
 <template>
   <rwc-category category-title="The Billing Calculator">
     <span class="rwa-button-group left-aligned">
-      <span class="span1"></span>
+      <span class="span"></span>
       <button :class="[ isActiveReview ? 'rwa-button' : 'rwa-button secondary' ]" @click="toggleComponent('review')">Review</button>
-      <span class="span1"></span>
+      <span class="span"></span>
       <button :class="[ isActiveRepo ? 'rwa-button' : 'rwa-button secondary' ]" @click="toggleComponent('repository')">Repository</button>
-      <span class="span1"></span>
+      <span class="span"></span>
       <button :class="[ isActiveColdStorage ? 'rwa-button' : 'rwa-button secondary' ]" @click="toggleComponent('coldStorage')">Cold Storage</button>
-      <span class="span1"></span>
+      <span class="span"></span>
       <button :class="[ isActiveTranslate ? 'rwa-button' : 'rwa-button secondary' ]" @click="toggleComponent('translate')">Translate</button>
-      <span class="span1"></span>
+      <span class="span"></span>
       <button :class="[ isActiveStaging ? 'rwa-button' : 'rwa-button secondary' ]" @click="toggleComponent('staging')">Staging</button>
-      <span class="span1"></span>
+      <span class="span"></span>
     </span>
   </rwc-category>
   <rwc-category category-title="Chart">
@@ -24,9 +24,9 @@
 
     </div>
   </rwc-category>
-
-  <rwc-text-input-field label="Estimaded cost $" :value="total" disabled ></rwc-text-input-field>
-
+  <rwc-category category-title="Summary">
+    <rwc-text-input-field label="Estimaded cost $" :value="total" disabled style="font-size: 19; margin-bottom: 1rem ;" ></rwc-text-input-field>
+  </rwc-category>
   <div v-if="showReviewComponent">
     <ReviewComponent></ReviewComponent>
   </div>
@@ -181,7 +181,7 @@ const toggleComponent = (component: string) => {
 
 
 <style lang="scss">
-.span1 {
+.span {
   background: inherit;
   width: 3rem;
   display: inline-block;
