@@ -138,6 +138,7 @@ function recalculate() {
 
       chartConfig.updateRepo(repoData.value);
       chartConfig.updateReview(reviewData.value, result.peekDay-1);
+      //chartConfig.updateCold()
 
   total.value = result.totalCost();
   changeResult(result);

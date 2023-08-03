@@ -3,9 +3,9 @@ import * as am5 from '@amcharts/amcharts5';
 import * as am5percent from "@amcharts/amcharts5/percent";
 
 import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
-import {shallowRef, onMounted, watch} from 'vue';
-import {storeToRefs} from "pinia";
-import {calculationResult} from "@/stores/calculationResult";
+import { shallowRef, onMounted, watch } from 'vue';
+import { storeToRefs } from "pinia";
+import { calculationResult } from "@/stores/calculationResult";
 
 let root;
 const chartdiv = shallowRef(null);
@@ -15,7 +15,7 @@ const { calcResult } = storeToRefs(calculationResult());
 let series;
 let legend;
 
-watch(calcResult, ()=>{
+watch(calcResult, () => {
 
 
   series.data.setAll([{
@@ -48,17 +48,28 @@ onMounted(() => {
   root.setThemes([am5themes_Animated.new(root)]);
 
   let chart = root.container.children.push(
-      am5percent.PieChart.new(root, {
-        radius: am5.percent(50)
-      })
+    am5percent.PieChart.new(root, {
+      radius: am5.percent(50),
+      layout: root.verticalLayout
+    })
   );
+  chart.children.unshift(am5.Label.new(root, {
+    text: "Cost $",
+    fontSize: 20,
+    fontWeight: "500",
+    textAlign: "center",
+    x: am5.percent(50),
+    centerX: am5.percent(50),
+    paddingTop: 0,
+    paddingBottom: 0
+  }));
 
   series = chart.series.push(
-      am5percent.PieSeries.new(root, {
-        name: "Series",
-        categoryField: "metric",
-        valueField: "amount"
-      })
+    am5percent.PieSeries.new(root, {
+      name: "Series",
+      categoryField: "metric",
+      valueField: "amount"
+    })
   );
 
   /*series.data.setAll([{
