@@ -69,6 +69,7 @@ import {StagingCalculationInput} from "../calculator/StagingCalculator";
 import {TranslateCalculatorInput} from "../calculator/TranslateCalculator";
 import PieChart from "../components/PieChart.vue";
 import {calculationResult} from "../stores/calculationResult";
+import { usestagingStore } from '../stores/staging'
 
 const { data } = storeToRefs(useBillableData());
 const { calcResult} = storeToRefs(calculationResult());
@@ -76,6 +77,7 @@ const {changeResult } = calculationResult();
 
 const { repoData } = storeToRefs(useRepositoryStore());
 const { reviewData} = storeToRefs(useReviewStore());
+const {stagingData} = storeToRefs(usestagingStore());
 
 const total = ref(0);
 
@@ -93,6 +95,7 @@ onMounted(() => {
 watch(reviewData.value, recalculate);
 watch(repoData.value, recalculate);
 watch(data.value, recalculate);
+watch(stagingData.value, recalculate);
 
 function recalculate() {
   const calculationService = new CalculationService();
@@ -102,28 +105,28 @@ function recalculate() {
           reviewData: reviewData.value[0],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[0],
-          stagingData: new StagingCalculationInput(0,0),
+          stagingData: stagingData.value[0],
           translateData : data.value.translateData
         }, 1],
         [{
           reviewData: reviewData.value[1],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[1],
-          stagingData: new StagingCalculationInput(0,0),
+          stagingData: stagingData.value[1],
           translateData : data.value.translateData
         }, 2],
         [{
           reviewData: reviewData.value[2],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[2],
-          stagingData: new StagingCalculationInput(0,0),
+          stagingData: stagingData.value[2],
           translateData : data.value.translateData
         }, 3],
         [{
           reviewData: reviewData.value[3],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[3],
-          stagingData: new StagingCalculationInput(0,0),
+          stagingData: stagingData.value[3],
           translateData : data.value.translateData
 
         }, 4],
@@ -131,7 +134,7 @@ function recalculate() {
           reviewData: reviewData.value[4],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[4],
-          stagingData: new StagingCalculationInput(0,0),
+          stagingData: stagingData.value[4],
           translateData : data.value.translateData
         }, 5],
       ]);
