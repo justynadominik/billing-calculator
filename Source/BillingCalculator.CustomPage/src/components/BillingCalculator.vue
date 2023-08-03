@@ -92,6 +92,7 @@ onMounted(() => {
 
 watch(reviewData.value, recalculate);
 watch(repoData.value, recalculate);
+watch(data.value, recalculate);
 
 function recalculate() {
   const calculationService = new CalculationService();
@@ -102,28 +103,28 @@ function recalculate() {
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[0],
           stagingData: new StagingCalculationInput(0,0),
-          translateData : new TranslateCalculatorInput(0)
+          translateData : data.value.translateData
         }, 1],
         [{
           reviewData: reviewData.value[1],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[1],
           stagingData: new StagingCalculationInput(0,0),
-          translateData : new TranslateCalculatorInput(0)
+          translateData : data.value.translateData
         }, 2],
         [{
           reviewData: reviewData.value[2],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[2],
           stagingData: new StagingCalculationInput(0,0),
-          translateData : new TranslateCalculatorInput(0)
+          translateData : data.value.translateData
         }, 3],
         [{
           reviewData: reviewData.value[3],
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[3],
           stagingData: new StagingCalculationInput(0,0),
-          translateData : new TranslateCalculatorInput(0)
+          translateData : data.value.translateData
 
         }, 4],
         [{
@@ -131,7 +132,7 @@ function recalculate() {
           coldStorageData: new ColdStorageCalculationInput(0,0,0),
           repoData: repoData.value[4],
           stagingData: new StagingCalculationInput(0,0),
-          translateData : new TranslateCalculatorInput(0)
+          translateData : data.value.translateData
         }, 5],
       ]);
 

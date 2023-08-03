@@ -1,5 +1,5 @@
 <template>
-    <rwc-category category-title="Review" collapsible>
+  <rwc-category :category-title="'Review - ' + calcResult.reviewResult.amount + ' $'" collapsible>
         <span>
           <table>
             <tr>
@@ -147,9 +147,11 @@ import { useBillableData } from "../../stores/counter";
 import { ref, watch } from "vue";
 import { useReviewStore } from "../../stores/review";
 import "@/components/components-styles.scss";
+import {calculationResult} from "@/stores/calculationResult";
 
 const { changeReviewBillableFileSize, changeReviewTextOnlyDocument } = useBillableData();
 const { reviewData } = storeToRefs(useReviewStore());
+const { calcResult } = storeToRefs(calculationResult());
 
 const inputBillableFileSizeReview = ref(0);
 const inputTextOnlyDocumentsReview = ref(0);

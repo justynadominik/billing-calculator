@@ -1,5 +1,5 @@
 <template>
-    <rwc-category category-title="Repository" collapsible>
+    <rwc-category :category-title="'Repository - ' + calcResult.repoResult.amount + ' $'" collapsible>
         <span>
           <table>
             <tr>
@@ -214,7 +214,9 @@ import { useBillableData } from "../../stores/counter";
 import { ref, watch } from "vue";
 import { useRepositoryStore } from "../../stores/repository";
 import "@/components/components-styles.scss";
+import {calculationResult} from "@/stores/calculationResult";
 
+const { calcResult } = storeToRefs(calculationResult());
 const { repoData } = storeToRefs(useRepositoryStore());
 const { changeRepoBillableFileSize, changeRepoLinkedFileSize, changeRepoTextOnlyDocument } = useBillableData();
 
