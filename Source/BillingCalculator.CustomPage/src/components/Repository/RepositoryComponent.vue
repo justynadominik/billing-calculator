@@ -8,7 +8,7 @@
             <input class="input1" label="Billable File Size" edit-mode v-model="inputBillableFileSizeRepo">
             </td>
             <td style="width: 75rem;">
-              <rwc-category class="breakdown-category" category-title="Bilable File Size Breakdown" style="font-weight: 700;" collapsible collapsed reduced-spacing>
+              <rwc-category class="breakdown-category" category-title="Bilable File Size Breakdown" style="font-weight: 700; border-color: #8bd3c7;" collapsible collapsed reduced-spacing>
             <table>
                 <tr>
                   <td>
