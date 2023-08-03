@@ -1,19 +1,19 @@
-<script setup>
+<script setup lang="ts">
 import * as am5 from '@amcharts/amcharts5';
 import * as am5percent from "@amcharts/amcharts5/percent";
 
 import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
 import { shallowRef, onMounted, watch } from 'vue';
 import { storeToRefs } from "pinia";
-import { calculationResult } from "@/stores/calculationResult";
+import { calculationResult } from "../stores/calculationResult";
 
 let root;
-const chartdiv = shallowRef(null);
+const chartdiv: any = shallowRef(null);
 
 const { calcResult } = storeToRefs(calculationResult());
 
-let series;
-let legend;
+let series: any;
+let legend : any;
 
 watch(calcResult, () => {
 
