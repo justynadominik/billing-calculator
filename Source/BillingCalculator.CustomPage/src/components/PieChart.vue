@@ -13,7 +13,7 @@ const chartdiv: any = shallowRef(null);
 const { calcResult } = storeToRefs(calculationResult());
 
 let series: any;
-let legend : any;
+let legend: any;
 
 watch(calcResult, () => {
 
@@ -28,14 +28,14 @@ watch(calcResult, () => {
     metric: "Cold storage",
     amount: 0
   },
-    {
-      metric: "Translate",
-      amount: calcResult.value.translateResult.amount
-    },
-    {
-      metric: "Staging",
-      amount: calcResult.value.stagingResult.amount
-    }
+  {
+    metric: "Translate",
+    amount: calcResult.value.translateResult.amount
+  },
+  {
+    metric: "Staging",
+    amount: calcResult.value.stagingResult.amount
+  }
   ]);
 
   legend.data.setAll(series.dataItems);
@@ -86,10 +86,9 @@ onMounted(() => {
   series.labels.template.set("forceHidden", true);
 
 
- legend = chart.children.push(am5.Legend.new(root, {
+  legend = chart.children.push(am5.Legend.new(root, {
     centerX: am5.percent(50),
     x: am5.percent(50),
-    layout: root.horizontalLayout
   }));
 
   //legend.data.setAll(series.dataItems);
