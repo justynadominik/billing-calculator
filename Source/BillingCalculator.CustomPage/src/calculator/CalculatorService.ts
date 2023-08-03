@@ -100,34 +100,34 @@ export class CalculationService {
   }
 
   getDefaultReviewTiers(): RateConfiguration {
-    return new RateConfiguration([new Tier(0, 2, 1.2), new Tier(2, null, 1.0)]);
+    return new RateConfiguration([new Tier(0, 100, 1.2), new Tier(100, 200, 1.0), new Tier(200, null, 0.8)]);
   }
 
   getDefaultRepoTiers(): RateConfiguration {
     return new RateConfiguration([
-      new Tier(0, 10, 0.6),
-      new Tier(10, 20, 0.5),
-      new Tier(20, 30, 0.3),
-      new Tier(30, 40, 0.2),
-      new Tier(40, null, 0.1),
+      new Tier(0, 100, 0.6),
+      new Tier(100, 200, 0.5),
+      new Tier(200, 300, 0.3),
+      new Tier(300, 400, 0.2),
+      new Tier(400, null, 0.1),
     ]);
   }
 
   getDefaultColdStorageTiers(): RateConfiguration {
     return new RateConfiguration([
-      new Tier(0, 10, 0.3),
-      new Tier(10, 20, 0.2),
-      new Tier(20, 30, 0.1),
-      new Tier(30, null, 0.05),
+      new Tier(0, 100, 0.3),
+      new Tier(100, 200, 0.2),
+      new Tier(200, 300, 0.1),
+      new Tier(300, null, 0.05),
     ]);
   }
 
   getDefaultStagingTiers(): RateConfiguration {
     return new RateConfiguration([
-      new Tier(0, 10, 0.3, 1),
-      new Tier(10, 20, 0.2, 2),
-      new Tier(20, 30, 0.1, 3),
-      new Tier(30, null, 0.05, 4),
+      new Tier(0, 100, 0.3, 10),
+      new Tier(100, 200, 0.2, 20),
+      new Tier(200, 300, 0.1, 30),
+      new Tier(300, null, 0.05, 40),
     ]);
   }
 
