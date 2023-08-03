@@ -13,10 +13,10 @@ const chartdiv = shallowRef(null);
 const { calcResult } = storeToRefs(calculationResult());
 
 let series;
+let legend;
 
 watch(calcResult, ()=>{
 
-  console.log(calcResult.value.reviewResult.amount)
 
   series.data.setAll([{
     metric: "Repo",
@@ -26,8 +26,19 @@ watch(calcResult, ()=>{
     amount: calcResult.value.reviewResult.amount
   }, {
     metric: "Cold storage",
-    amount: 2
-  }]);
+    amount: 0
+  },
+    {
+      metric: "Translate",
+      amount: calcResult.value.translateResult.amount
+    },
+    {
+      metric: "Staging",
+      amount: calcResult.value.stagingResult.amount
+    }
+  ]);
+
+  legend.data.setAll(series.dataItems);
 });
 
 onMounted(() => {
@@ -50,7 +61,7 @@ onMounted(() => {
       })
   );
 
-  series.data.setAll([{
+  /*series.data.setAll([{
     metric: "Repo",
     amount: 1
   }, {
@@ -59,18 +70,18 @@ onMounted(() => {
   }, {
     metric: "Cold storage",
     amount: 1
-  }]);
+  }]);*/
 
   series.labels.template.set("forceHidden", true);
 
 
-  let legend = chart.children.push(am5.Legend.new(root, {
+ legend = chart.children.push(am5.Legend.new(root, {
     centerX: am5.percent(50),
     x: am5.percent(50),
     layout: root.horizontalLayout
   }));
 
-  legend.data.setAll(series.dataItems);
+  //legend.data.setAll(series.dataItems);
 
 });
 </script>
