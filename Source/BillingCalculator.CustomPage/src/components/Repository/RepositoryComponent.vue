@@ -229,16 +229,25 @@ const stepRefText = ref(10);
 watch(inputBillableFileSizeRepo, (newValue: number) => {
     changeRepoBillableFileSize(newValue);
     stepRef.value = Number(newValue) / 10;
+    repoData.value.forEach((repo) => {
+        repo.totalBilliableFileSizeInGB = Number(newValue);
+    });
 }, { immediate: true })
 
 watch(inputTextOnlyDocumentsRepo, (newValue: number) => {
     changeRepoTextOnlyDocument(newValue);
     stepRefText.value = Number(newValue) / 10;
+    repoData.value.forEach((repo) => {
+      repo.textOnlyDocumentsCount = Number(newValue);
+    });
 }, { immediate: true })
 
 watch(inputTextLinkedFileSizeRepo, (newValue: number) => {
     changeRepoLinkedFileSize(newValue);
     stepRefLink.value = Number(newValue) / 10;
+    repoData.value.forEach((repo) => {
+      repo.linkedBilliableFileSizeInGB = Number(newValue);
+    });
 }, { immediate: true })
 
 </script>

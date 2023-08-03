@@ -160,11 +160,19 @@ const stepRefText = ref(10);
 watch(inputBillableFileSizeReview, (newValue: number) => {
     changeReviewBillableFileSize(newValue);
     stepRef.value = Number(newValue) / 10;
+
+    reviewData.value.forEach((element: any) => {
+        element.dataInGb = Number(newValue);
+    });
 }, { immediate: true })
 
 watch(inputTextOnlyDocumentsReview, (newValue: number) => {
     changeReviewTextOnlyDocument(newValue);
     stepRefText.value = Number(newValue) / 10;
+
+    reviewData.value.forEach((element: any) => {
+      element.textOnlyDocumentsCount = Number(newValue);
+    });
 }, { immediate: true })
 
 </script>
