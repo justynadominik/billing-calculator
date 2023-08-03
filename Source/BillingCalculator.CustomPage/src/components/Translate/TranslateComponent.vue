@@ -1,7 +1,15 @@
 <template>
     <rwc-category :category-title="'Translate - ' + calcResult.translateResult.amount +  ' $'" collapsible>
-        <static-text class="input-label" >Billable Units</static-text>
-        <input class="input1" label="Billable Units" style="margin-left: 0rem; margin-bottom: 1rem;" edit-mode v-model="data.translateData.dataInGb">
+        <table>
+            <tr>
+                <td style="width: 25rem;">
+                    <static-text class="input-label" >Billable Units</static-text>
+                    <input class="input1" label="Billable Units" edit-mode v-model="data.translateData.dataInGb">
+                </td>
+                <td style="width: 75rem;">
+                </td>
+            </tr>
+        </table>
     </rwc-category>
 </template>
 
