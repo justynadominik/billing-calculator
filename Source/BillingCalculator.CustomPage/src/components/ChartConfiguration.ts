@@ -2,6 +2,7 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import { ReviewCalculationInput } from "../calculator/ReviewCalculator";
 import { RepositoryCalculationInput } from "../calculator/RepositoryCalculator";
+import { StagingCalculationInput } from "../calculator/StagingCalculator";
 
 export class ChartConfiguration {
 
@@ -218,9 +219,9 @@ export class ChartConfiguration {
         this.coldSeries.data.setAll(this.coldData);
     }
 
-    updateStage(newData: RepositoryCalculationInput[]) {
+    updateStage(newData: StagingCalculationInput[]) {
         newData.forEach((element, i) =>{
-            this.stageData[i].value = element.totalBilliableFileSizeInGB;
+            this.stageData[i].value = element.dataInGb;
         })
         this.stageSeries.data.setAll(this.stageData);
     }
