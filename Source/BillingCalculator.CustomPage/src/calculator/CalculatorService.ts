@@ -109,7 +109,7 @@ export class CalculationService {
       new Tier(3, 5, 8.1),
       new Tier(5, 20, 6),
       new Tier(20, 35, 5.5),
-      new Tier(35, 77, 5),
+      new Tier(35, 100, 5),
       new Tier(100, null, 3)
     ]);
   }
@@ -120,7 +120,7 @@ export class CalculationService {
       new Tier(3, 5, 2.7),
       new Tier(5, 20, 2),
       new Tier(20, 35, 1.7),
-      new Tier(35, 77, 1.6),
+      new Tier(35, 100, 1.6),
       new Tier(100, null, 1)
     ]);
   }
@@ -131,7 +131,7 @@ export class CalculationService {
       new Tier(3, 5, 2),
       new Tier(5, 20, 1.5),
       new Tier(20, 35, 1.3),
-      new Tier(35, 77, 1.2),
+      new Tier(35, 100, 1.2),
       new Tier(100, null, 0.75)
     ]);
   }
