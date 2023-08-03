@@ -64,6 +64,7 @@ export class ChartConfiguration {
                 })
             })
         );
+
         this.linkReviewSeries = chart.series.push(
             am5xy.LineSeries.new(root, {
                 name: "Linked files",
@@ -119,6 +120,12 @@ export class ChartConfiguration {
                 })
             })
         );
+
+        this.stageSeries.strokes.template.set("strokeWidth", 3);
+        this.coldSeries.strokes.template.set("strokeWidth", 3);
+        this.repoSeries.strokes.template.set("strokeWidth", 3);
+        this.linkReviewSeries.strokes.template.set("strokeWidth", 3);
+        this.reviewSeries.strokes.template.set("strokeWidth", 3);
 
         var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
         cursor.lineY.set("visible", false);
